@@ -1,0 +1,107 @@
+.homepage-main {
+
+
+    .homepage-background {
+        width   : 100%;
+        height  : 100vh;
+        overflow: hidden;
+        position: fixed;
+        top     : 0;
+        left    : 0;
+        bottom  : 0;
+        right   : 0;
+
+        img {
+            width     : 100%;
+            height    : 100%;
+            object-fit: cover;
+        }
+    }
+
+    .homepage-container {
+        width           : 100%;
+        height          : 1800px;
+        background-color: #fff;
+        position        : absolute;
+        z-index         : 1;
+
+        .homepage-header {
+            height          : 75px;
+            position        : fixed;
+            top             : 0;
+            right           : 0;
+            left            : 0;
+            box-shadow      : 1px 1px 15px 0 rgb(0 0 0 / 12%);
+            background-color: #fff;
+            z-index         : 1;
+        }
+
+        .homepage-poster {
+            width   : 100%;
+            height  : 80vh;
+            position: relative;
+
+            img {
+                width     : 100%;
+                height    : 100%;
+                object-fit: cover;
+            }
+
+            .poster-notify {
+                position        : absolute;
+                top             : 50%;
+                left            : 50%;
+                width           : 570px;
+                background-color: #fff;
+                border-radius   : 20px;
+                text-align      : center;
+                height          : 40%;
+                transform       : translate(-50%, -50%);
+                display         : flex;
+                justify-content : space-evenly;
+                flex-direction  : column;
+                align-items     : center;
+                padding         : 20px 0;
+
+                .notify-title {
+                    font-size  : 1.3rem;
+                    font-family: var(--font-open);
+                    color      : var(--primary);
+                    font-weight: 600;
+                }
+
+                .notify-des {
+                    font-family: var(--font-varela);
+                    font-size  : 3rem;
+                }
+
+                .notify-button {
+                    width              : 145px;
+                    height             : 48px;
+                    background-color   : var(--primary);
+                    color              : #fff;
+                    border-radius      : 50px;
+                    border             : none;
+                    font-size          : 1.4rem;
+                    transition         : ease;
+                    transition-duration: .4s;
+
+                    &:hover {
+                        scale: 1.05;
+                    }
+                }
+
+            }
+        }
+
+        .homepage-categories {
+            width          : 1200px;
+            margin         : 0 auto;
+            margin-top     : 150px;
+            display        : flex;
+            align-items    : center;
+            justify-content: space-between;
+            gap            : 20px;
+        }
+    }
+}

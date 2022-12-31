@@ -1,0 +1,42 @@
+.categories-container {
+    width      : 600px;
+    height     : 188px;
+    display    : flex;
+    gap        : 20px;
+    align-items: center;
+    position   : relative;
+
+    border-radius: 20px;
+
+    .content-left {
+        img {
+            width      : 220px;
+            height     : 220px;
+            position   : absolute;
+            top        : -60px;
+            margin-left: 1.6rem;
+        }
+    }
+
+    .content-right {
+        position: absolute;
+        left    : 50%;
+
+        .categories-name {
+            font-size  : 2.8rem;
+            font-family: var(--font-varela);
+            color      : #fff;
+            font-weight: 500;
+
+        }
+
+        .categories-button {
+            width        : 112px;
+            height       : 40px;
+            border-radius: 50px;
+            font-size    : 1.3rem;
+            font-family  : var(--font-open);
+            border       : none
+        }
+    }
+}

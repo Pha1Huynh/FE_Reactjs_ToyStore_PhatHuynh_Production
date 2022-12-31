@@ -1,0 +1,83 @@
+.header-container {
+    width : 1200px;
+    height: 100%;
+
+    margin         : 0 auto;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+
+    .content-left {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+
+        .header-logo {
+            font-family : var(--font-varela);
+            color       : #333;
+            font-size   : 2.2rem;
+            font-weight : 550;
+            margin-right: 20px;
+            cursor      : pointer;
+        }
+
+        .header-menu {
+            height         : 100%;
+            display        : flex;
+            justify-content: space-between;
+            align-items    : center;
+            list-style     : none;
+            gap            : 30px;
+            margin         : auto 0;
+            font-family    : var(--font-open);
+            font-size      : 1.4rem;
+            opacity        : 0.9;
+
+            .header-menu-item {
+                cursor: pointer;
+
+                &:hover {
+                    color  : var(--primary);
+                    opacity: 0.8;
+                }
+            }
+
+        }
+    }
+
+    .content-right {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+        font-family    : var(--font-open);
+        font-size      : 1.4rem;
+        opacity        : 0.9;
+
+        .header-cart {
+            display    : flex;
+            align-items: center;
+            margin     : auto 0;
+            cursor     : pointer;
+
+            .header-icon-cart {
+                margin: 0 12px;
+            }
+
+
+        }
+
+        .header-count {
+            display         : inline-block;
+            padding         : 1px 4px;
+            background-color: var(--primary);
+            border-radius   : 10px;
+            font-size       : 1.2rem;
+            color           : var(--white);
+            font-weight     : 600;
+            cursor          : pointer;
+            margin          : auto 0;
+        }
+
+
+    }
+}

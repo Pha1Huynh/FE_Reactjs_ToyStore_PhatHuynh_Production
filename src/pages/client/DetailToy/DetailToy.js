@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class DefaultClass extends Component {
+class DetailToy extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
 
   render() {
-    return <></>;
+    return <>This is detaitoy</>;
   }
 }
 const mapStateToProps = (state) => {
@@ -17,4 +17,4 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {};
 };
-export default connect(mapStateToProps, mapDispatchToProps)(DefaultClass);
+export default connect(mapStateToProps, mapDispatchToProps)(DetailToy);
