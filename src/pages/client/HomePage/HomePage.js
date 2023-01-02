@@ -5,9 +5,14 @@ import homebg from '~/assets/images/backgound/homebg.jpg';
 import headerbg from '~/assets/images/backgound/headerbg.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ToyCategories from '~/components/ToyCategories/ToyCategories';
+import ToyItem from '~/components/ToyItem/ToyItem';
+import ToySection from '~/components/ToySection/ToySection';
 import './HomePage.scss';
 import cat1 from '~/assets/images/categories/cat1.png';
 import cat2 from '~/assets/images/categories/cat2.png';
+import childrenbg from '~/assets/images/backgound/childrenbg.jpeg';
+import { faCirclePlay, faPaperPlane, faPlay } from '@fortawesome/free-solid-svg-icons';
+import Button from '~/components/Button/Button';
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -29,14 +34,71 @@ class HomePage extends Component {
                 <p className="first">Welcom to ToyStore</p>
                 <p className="second">Manage by PhatHuynh</p>
               </div>
-              <button className="notify-button">Open Catalog</button>
+              <Button name="Open Catalog" />
             </div>
           </div>
           <div className="homepage-categories">
-            <ToyCategories bgColor="#ffc12c" categoriesName="Stuffed Animals" categoriesImg={cat1} />
-            <ToyCategories bgColor="#fb416b" categoriesName="Wooded Toys" categoriesImg={cat2} isReverse={true} />
+            <div className="categories-content">
+              <ToyCategories bgColor="#ffc12c" categoriesName="Stuffed Animals" categoriesImg={cat1} />
+              <ToyCategories bgColor="#fb416b" categoriesName="Wooded Toys" categoriesImg={cat2} isReverse={true} />
+            </div>
           </div>
-          <div className="section-toy"></div>
+          <div className="section-toy">
+            <ToySection name="Stuffed Animal" />
+            <ToySection name="Wooded Toys" />
+          </div>
+          <div className="watch-our-story">
+            <div className="watch-content">
+              <p className="watch-sub-title">About The Shop</p>
+              <p className="watch-main-title">Watch Our Story</p>
+              <p className="watch-description">
+                There is no magic formula to write perfect ad copy. It is based on a number of factors, including ad
+                placement, demographic, even the consumer’s mood.
+              </p>
+              <button className="watch-button">
+                <FontAwesomeIcon icon={faPlay} className="play-btn" />
+              </button>
+            </div>
+          </div>
+          <div className="made-a-web-flow">
+            <div className="made-web-flow-container">
+              <div className="made-web-flow-header">
+                <p className="made-web-sub-title">Made for Webflow</p>
+                <p className="made-web-main-title1">Simple & Colorful Ecommerce Template for Your Business</p>
+              </div>
+              <div className="made-web-flow-content">
+                <div className="content-left">
+                  <p className="made-web-title">Available for FREE!</p>
+                  <div className="made-web-strike-through"></div>
+                  <p className="made-web-description">
+                    A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing
+                    result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take
+                    action. There is no magic formula to write perfect ad copy
+                  </p>
+                  <Button name="Get it now" />
+                </div>
+                <div className="content-right">
+                  <img src={childrenbg} alt="children" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="subscribe-newsletter">
+            <div className="subscribe-newsletter-container">
+              <div className="content-left">
+                <div className="send">
+                  <FontAwesomeIcon className="send-icon" icon={faPaperPlane} />
+                </div>
+                <p className="subscribe-description">
+                  Subscribe to our newsletter & get <p className="discount">10% discount!</p>
+                </p>
+              </div>
+              <div className="content-right">
+                <input placeholder="Enter your email address" />
+                <Button name="Subscribe" size="sm" />
+              </div>
+            </div>
+          </div>
         </div>
         <div className="homepage-background">
           <img src={homebg} alt="bg" />

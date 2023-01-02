@@ -1,0 +1,39 @@
+.button-container {
+    button {
+        width              : 145px;
+        min-height         : 48px;
+        background-color   : var(--primary);
+        color              : #fff;
+        border-radius      : 50px;
+        border             : none;
+        font-size          : 1.4rem;
+        transition         : ease;
+        transition-duration: .4s;
+
+        &:hover {
+            scale: 1.05;
+        }
+    }
+
+
+}
+
+.button-container.sm {
+    button {
+        width              : 122px;
+        min-height         : 48px;
+        background-color   : var(--primary);
+        color              : #fff;
+        border-radius      : 50px;
+        border             : none;
+        font-size          : 1.4rem;
+        transition         : ease;
+        transition-duration: .4s;
+
+        &:hover {
+            scale: 1.05;
+        }
+    }
+
+
+}

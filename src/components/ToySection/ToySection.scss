@@ -1,0 +1,65 @@
+.toy-section-container {
+    width  : 1200px;
+    margin : 0 auto;
+    padding: 100px 0;
+
+    .toy-section-header {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+
+        .title {
+            font-family: var(--font-varela);
+            font-size  : 2.8rem;
+            opacity    : 0.95;
+        }
+
+        .see-all-toy-button {
+            padding-top   : 2px;
+            padding-bottom: 2px;
+            border-bottom : 2px solid #ddd;
+            font-size     : 1.3rem;
+            font-family   : var(--font-open);
+            font-weight   : 600;
+            cursor        : pointer;
+
+            &:hover {
+                border-bottom      : 2px solid var(--primary);
+                transition         : ease-in;
+                transition-duration: .2s;
+
+            }
+
+            .icon {
+                margin-left: 4px;
+            }
+        }
+    }
+
+    .toy-section-strikethrough {
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        margin         : 3.5rem 0;
+
+        .line1 {
+            width           : 10%;
+            height          : 0.1rem;
+            background-color: var(--primary);
+        }
+
+        .line2 {
+            flex            : 1;
+            height          : 0.1rem;
+            background-color: #ccc;
+        }
+    }
+
+    .list-toy {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+    }
+
+
+}
