@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Header from '~/components/Header/Header';
+import Footer from '~/components/Footer/Footer';
 import homebg from '~/assets/images/backgound/homebg.jpg';
 import headerbg from '~/assets/images/backgound/headerbg.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,6 +12,7 @@ import './HomePage.scss';
 import cat1 from '~/assets/images/categories/cat1.png';
 import cat2 from '~/assets/images/categories/cat2.png';
 import childrenbg from '~/assets/images/backgound/childrenbg.jpeg';
+import link1 from '~/assets/images/listLink/link1.jpg';
 import { faCirclePlay, faPaperPlane, faPlay } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button/Button';
 class HomePage extends Component {
@@ -98,6 +100,28 @@ class HomePage extends Component {
                 <Button name="Subscribe" size="sm" />
               </div>
             </div>
+          </div>
+          <div className="instagram-info">
+            <div className="instagram-info-container">
+              <div className="instagram-info-header">
+                <p className="instagram-info-sub-header">@ElasticThemes</p>
+                <p className="instagram-info-main-header">We're on Instagram!</p>
+              </div>
+              <div className="instagram-info-content">
+                <div className="list-link">
+                  <img src={link1} alt="link" />
+                  <img src={link1} alt="link" />
+                  <img src={link1} alt="link" />
+                  <img src={link1} alt="link" />
+                  <img src={link1} alt="link" />
+                  <img src={link1} alt="link" />
+                </div>
+                <Button name="See More Photos" />
+              </div>
+            </div>
+          </div>
+          <div className="homepage-footer">
+            <Footer />
           </div>
         </div>
         <div className="homepage-background">

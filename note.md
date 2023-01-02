@@ -43,6 +43,7 @@ Hàm mapStateToProps và mapDispatchToProps là redux truyền data và action c
 * moment(new Date()).add(i, "days").startOf("day").valueOf(): startOf("day): chỉ lấy ngày
 * react-image-lightbox: preview ảnh
 * lodash: Kiểm tra 1 obj hoặc arr có rỗng hay không
+* npm i --save @fortawesome/free-brands-svg-icons: Thư viện để lấy các icon social
 * <div dangerouslySetInnerHTML={{__html: ...}}></div> Render ra giao diện khi lấy đoạn HTML từ db
 
 * <Route path="/users/:id" component={DetailDoctor} />: Nhận tham số id

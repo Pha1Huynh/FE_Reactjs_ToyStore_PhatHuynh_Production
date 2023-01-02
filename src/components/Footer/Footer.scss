@@ -1,0 +1,92 @@
+.footer {
+    background-color: var(--primary);
+
+    color: #fff;
+
+    .footer-container {
+        width          : 1200px;
+        margin         : 0 auto;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+        flex-direction : column;
+
+        .footer-top {
+            width          : 100%;
+            display        : flex;
+            justify-content: space-between;
+            align-items    : center;
+            margin         : 50px 0 30px 0;
+
+            .footer-contact {
+                font-family    : var(--font-open);
+                font-size      : 1.1rem;
+                color          : #fff;
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                gap            : 16px;
+
+            }
+
+            .footer-social-list {
+                color: #fff;
+
+
+                .social-link {
+                    display        : flex;
+                    justify-content: center;
+                    align-items    : center;
+                    gap            : 10px;
+
+                    .social-icon {
+                        width : 2rem;
+                        height: 2rem;
+                    }
+                }
+            }
+        }
+
+        .footer-strike-through {
+            width           : 100%;
+            background-color: #f8f8f8;
+            height          : 0.05rem;
+            margin-bottom   : 30px;
+        }
+
+        .footer-bottom {
+            width          : 100%;
+            display        : flex;
+            justify-content: space-between;
+            font-family    : var(--font-open);
+            font-size      : 1.1rem;
+            margin-bottom  : 20px;
+
+            .create-by {
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+
+                .name {
+                    text-decoration: underline;
+                    margin         : auto;
+                    margin-left    : 0.3rem;
+                }
+            }
+
+            .more-detail {
+                display     : flex;
+                justify-self: center;
+                align-items : center;
+
+                ul {
+                    display        : flex;
+                    justify-content: center;
+                    list-style     : none;
+                    text-decoration: underline;
+                    gap            : 6px;
+                }
+            }
+        }
+    }
+}
