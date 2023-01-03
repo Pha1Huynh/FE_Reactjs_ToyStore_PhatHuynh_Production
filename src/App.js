@@ -9,6 +9,10 @@ function App() {
             const Component = item.component;
             return <Route key={index} path={item.path} element={<Component />} />;
           })}
+          {privateRoutes.map((item, index) => {
+            const Component = item.component;
+            return <Route key={index} path={item.path} element={<Component />} />;
+          })}
         </Routes>
       </div>
     </Router>
