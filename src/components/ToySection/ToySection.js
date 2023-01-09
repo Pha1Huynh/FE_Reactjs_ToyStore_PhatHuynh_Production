@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightLong } from '@fortawesome/free-solid-svg-icons';
 import ToyItem from '~/components/ToyItem/ToyItem';
 function ToySection(props) {
+  let { data } = props;
   return (
     <div className="toy-section-container">
       <div className="toy-section-header">
@@ -16,10 +17,11 @@ function ToySection(props) {
         <div className="line2"></div>
       </div>
       <div className="list-toy">
-        <ToyItem />
-        <ToyItem />
-        <ToyItem />
-        <ToyItem />
+        {data &&
+          data.length > 0 &&
+          data.map((item, index) => {
+            return <ToyItem {...item} key={index} />;
+          })}
       </div>
     </div>
   );

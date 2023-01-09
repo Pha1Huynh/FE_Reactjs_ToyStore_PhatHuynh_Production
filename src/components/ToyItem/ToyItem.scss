@@ -10,6 +10,7 @@
     cursor             : pointer;
     transition         : ease;
     transition-duration: .3s;
+    text-decoration    : none;
 
     &:hover {
         transform : scale(1.05) translate(0px, -2px);
@@ -23,9 +24,10 @@
     }
 
     .toy-item-name {
-        font-size  : 1.5rem;
-        font-family: var(--font-varela);
-        opacity    : .9;
+        font-size      : 1.5rem;
+        font-family    : var(--font-varela);
+        opacity        : .9;
+        text-decoration: none !important;
     }
 
     .toy-item-price {
@@ -39,6 +41,7 @@
         align-items     : center;
         background-color: var(--primary);
         border-radius   : 50px;
+        text-decoration : none;
 
     }
 }

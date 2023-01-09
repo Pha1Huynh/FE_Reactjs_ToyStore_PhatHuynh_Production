@@ -6,7 +6,7 @@ class DefaultClass extends Component {
     super(props);
     this.state = {};
   }
-
+  componentDidUpdate(prevProps, prevStates) {}
   render() {
     return <></>;
   }

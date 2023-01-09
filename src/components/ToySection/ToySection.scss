@@ -1,7 +1,8 @@
 .toy-section-container {
-    width  : 1200px;
-    margin : 0 auto;
-    padding: 100px 0;
+    width          : 1200px;
+    margin         : 0 auto;
+    padding        : 100px 0;
+    text-decoration: none;
 
     .toy-section-header {
         display        : flex;
@@ -59,6 +60,7 @@
         display        : flex;
         justify-content: space-between;
         align-items    : center;
+        text-decoration: none;
     }
 
 

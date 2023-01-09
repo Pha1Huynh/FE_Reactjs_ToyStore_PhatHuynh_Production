@@ -13,15 +13,46 @@ import cat1 from '~/assets/images/categories/cat1.png';
 import cat2 from '~/assets/images/categories/cat2.png';
 import childrenbg from '~/assets/images/backgound/childrenbg.jpeg';
 import link1 from '~/assets/images/listLink/link1.jpg';
-import { faCirclePlay, faPaperPlane, faPlay } from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane, faPlay } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button/Button';
+import * as actions from '~/store/actions';
+
 class HomePage extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      listAllToy: [],
+      listStuffedToy: [],
+      listWoodedToy: [],
+    };
   }
+  async componentDidMount() {
+    await this.props.getAllToy();
+  }
+  componentDidUpdate(prevProps, prevStates) {
+    if (this.props.allToy !== prevProps.allToy) {
+      let listStuffedToy = this.buildListToy(this.props.allToy, 'TT1');
+      let listWoodedToy = this.buildListToy(this.props.allToy, 'TT2');
 
+      this.setState({
+        listAllToy: this.props.allToy,
+        listStuffedToy: listStuffedToy.slice(0, 4),
+        listWoodedToy: listWoodedToy.slice(0, 4),
+      });
+    }
+  }
+  buildListToy = (data, type) => {
+    if (data && data.length > 0) {
+      let result = data.filter((item, index) => {
+        let result = item.toyTypeId === type;
+        return result;
+      });
+      return result;
+    }
+  };
   render() {
+    let { listStuffedToy, listWoodedToy } = this.state;
+
     return (
       <div className="homepage-main">
         <div className="homepage-container">
@@ -41,21 +72,30 @@ class HomePage extends Component {
           </div>
           <div className="homepage-categories">
             <div className="categories-content">
-              <ToyCategories bgColor="#ffc12c" categoriesName="Stuffed Animals" categoriesImg={cat1} />
-              <ToyCategories bgColor="#fb416b" categoriesName="Wooded Toys" categoriesImg={cat2} isReverse={true} />
+              <ToyCategories
+                bgColor="#ffc12c"
+                categoriesName="Stuffed Animals"
+                categoriesImg={cat1}
+              />
+              <ToyCategories
+                bgColor="#fb416b"
+                categoriesName="Wooded Toys"
+                categoriesImg={cat2}
+                isReverse={true}
+              />
             </div>
           </div>
           <div className="section-toy">
-            <ToySection name="Stuffed Animal" />
-            <ToySection name="Wooded Toys" />
+            <ToySection name="Stuffed Animals" data={listStuffedToy} />
+            <ToySection name="Wodded Toys" data={listWoodedToy} />
           </div>
           <div className="watch-our-story">
             <div className="watch-content">
               <p className="watch-sub-title">About The Shop</p>
               <p className="watch-main-title">Watch Our Story</p>
               <p className="watch-description">
-                There is no magic formula to write perfect ad copy. It is based on a number of factors, including ad
-                placement, demographic, even the consumer’s mood.
+                There is no magic formula to write perfect ad copy. It is based on a number of
+                factors, including ad placement, demographic, even the consumer’s mood.
               </p>
               <button className="watch-button">
                 <FontAwesomeIcon icon={faPlay} className="play-btn" />
@@ -66,16 +106,19 @@ class HomePage extends Component {
             <div className="made-web-flow-container">
               <div className="made-web-flow-header">
                 <p className="made-web-sub-title">Made for Webflow</p>
-                <p className="made-web-main-title1">Simple & Colorful Ecommerce Template for Your Business</p>
+                <p className="made-web-main-title1">
+                  Simple & Colorful Ecommerce Template for Your Business
+                </p>
               </div>
               <div className="made-web-flow-content">
                 <div className="content-left">
                   <p className="made-web-title">Available for FREE!</p>
                   <div className="made-web-strike-through"></div>
                   <p className="made-web-description">
-                    A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing
-                    result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take
-                    action. There is no magic formula to write perfect ad copy
+                    A successful marketing plan relies heavily on the pulling-power of advertising
+                    copy. Writing result-oriented ad copy is difficult, as it must appeal to,
+                    entice, and convince consumers to take action. There is no magic formula to
+                    write perfect ad copy
                   </p>
                   <Button name="Get it now" />
                 </div>
@@ -132,9 +175,11 @@ class HomePage extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  return { dataRedux: state.users };
+  return { allToy: state.client.allToy };
 };
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    getAllToy: () => dispatch(actions.fetchAllToy()),
+  };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

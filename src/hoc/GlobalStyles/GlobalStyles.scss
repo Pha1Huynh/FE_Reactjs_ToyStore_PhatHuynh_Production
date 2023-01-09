@@ -23,10 +23,11 @@ html {
 }
 
 body {
-    font-size     : 1.6rem;
-    line-height   : 1.5;
-    text-rendering: optimizeSpeed;
-    color         : var(--text-color);
+    font-size       : 1.6rem;
+    line-height     : 1.5;
+    text-rendering  : optimizeSpeed;
+    color           : var(--text-color);
+    background-color: #f8f8f8;
 }
 
 //Fonts emmbeded

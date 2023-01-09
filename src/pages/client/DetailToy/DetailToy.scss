@@ -1,0 +1,197 @@
+.detail-toy-container {
+    background-color: #f8f8f8;
+
+
+    .detail-toy-header {
+        height          : 75px;
+        position        : fixed;
+        top             : 0;
+        right           : 0;
+        left            : 0;
+        box-shadow      : 1px 1px 15px 0 rgb(0 0 0 / 12%);
+        background-color: #fff;
+        z-index         : 1;
+        background-color: #f8f8f8;
+
+    }
+
+    .detail-toy-content {
+        width           : 100%;
+        background-color: #f8f8f8;
+        margin-bottom   : 100px;
+
+
+        .detail-toy-main-content {
+            width           : 1200px;
+            height          : auto;
+            margin          : 125px auto;
+            background-color: #fff;
+            border-radius   : 20px;
+            padding-bottom  : 100px;
+
+
+            .toy-info {
+                display        : flex;
+                justify-content: space-between;
+                align-items    : center;
+                margin         : 0 75px;
+
+                .left {
+                    width        : 50%;
+                    padding-right: 120px;
+
+                    .toy-name {
+                        font-size  : 4rem;
+                        font-family: var(--font-varela);
+                    }
+
+                    .toy-info-content {
+                        font-size  : 1.4rem;
+                        font-family: var(--font-open);
+                        color      : #999;
+                    }
+
+                    .toy-price {
+                        font-size  : 2.4rem;
+                        font-family: var(--font-varela);
+                        color      : var(--primary);
+                        margin     : 30px 0;
+                    }
+
+                    .toy-buying {
+                        display        : flex;
+                        justify-content: flex-start;
+                        align-items    : center;
+
+                        input {
+                            width           : 80px;
+                            height          : 48px;
+                            border-radius   : 50px;
+                            border          : 1px solid #e5e5e5;
+                            background-color: #f8f8f8;
+                            text-align      : center;
+
+                            outline     : none;
+                            margin-right: 8px;
+
+                            &:active {
+                                border-color: var(--primary)
+                            }
+                        }
+                    }
+                }
+
+                .right {
+                    width     : 50%;
+                    text-align: right;
+
+                    img {
+                        width : 441px;
+                        height: 441px;
+                    }
+                }
+            }
+
+            .product-detail {
+                margin: 0 75px 0;
+
+                .top {
+                    .product-detail-header {
+                        display        : flex;
+                        justify-content: space-between;
+                        align-items    : center;
+
+                        .product-code {
+                            font-family: var(--font-open);
+                            color      : #999;
+                            font-size  : 1.1rem;
+                        }
+                    }
+
+                    .toy-section-strikethrough {
+                        display        : flex;
+                        justify-content: center;
+                        align-items    : center;
+                        margin         : 3.5rem 0;
+                        margin-bottom  : 7rem;
+
+                        .line1 {
+                            width           : 10%;
+                            height          : 0.1rem;
+                            background-color: var(--primary);
+                        }
+
+                        .line2 {
+                            flex            : 1;
+                            height          : 0.1rem;
+                            background-color: #ccc;
+                        }
+                    }
+
+                }
+
+                .bottom {
+                    display        : flex;
+                    justify-content: space-between;
+                    align-items    : center;
+
+                    .left {
+                        width        : 70%;
+                        padding-right: 60px;
+
+                        .product-detail__main {
+                            margin-top: 30px;
+
+                            .product-detail__main-text {
+                                font-family: font(var--font-varela);
+                                font-size  : 2.4rem;
+                            }
+
+                            .product-detail__main-content {
+                                font-family: font(var--font-open);
+                                font-size  : 1.4rem;
+                            }
+                        }
+                    }
+
+                    .right {
+                        width     : 30%;
+                        text-align: center;
+
+                        .table-unit {
+                            height         : 230px;
+                            width          : 270px;
+                            border         : 2px solid #e5e5e5;
+                            border-radius  : 20px;
+                            display        : flex;
+                            justify-content: space-evenly;
+                            align-items    : center;
+                            flex-direction : column;
+
+                            .unit-content {
+                                width          : 80%;
+                                font-family    : var(--font-open);
+                                font-size      : 1.2rem;
+                                display        : flex;
+                                justify-content: space-between;
+                                align-items    : center;
+
+                                border-bottom: 1px solid #e5e5e5;
+
+                                .unit-value {
+                                    font-weight: 600;
+                                }
+                            }
+
+                            .unit-content:last-child {
+                                border: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .detail-toy-footer {}
+}
