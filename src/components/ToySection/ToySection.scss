@@ -15,14 +15,40 @@
             opacity    : 0.95;
         }
 
+        .catalog-button {
+            padding-top    : 2px;
+            padding-bottom : 2px;
+            font-size      : 1.3rem;
+            font-family    : var(--font-open);
+            font-weight    : 600;
+            cursor         : pointer;
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            gap            : 16px;
+            margin         : auto 0;
+
+            p {
+
+                &.active {
+                    background-color: var(--primary);
+                    padding         : 10px 16px;
+                    border-radius   : 20px;
+                    color           : #fff
+                }
+            }
+        }
+
         .see-all-toy-button {
-            padding-top   : 2px;
-            padding-bottom: 2px;
-            border-bottom : 2px solid #ddd;
-            font-size     : 1.3rem;
-            font-family   : var(--font-open);
-            font-weight   : 600;
-            cursor        : pointer;
+            padding-top    : 2px;
+            padding-bottom : 2px;
+            border-bottom  : 2px solid #ddd;
+            font-size      : 1.3rem;
+            font-family    : var(--font-open);
+            font-weight    : 600;
+            cursor         : pointer;
+            text-decoration: none;
+            color          : var(--text-color);
 
             &:hover {
                 border-bottom      : 2px solid var(--primary);
@@ -57,10 +83,16 @@
     }
 
     .list-toy {
-        display        : flex;
-        justify-content: space-between;
-        align-items    : center;
-        text-decoration: none;
+        width                : 100%;
+        // display        : flex;
+        // justify-content: space-between;
+        // align-items    : center;
+        // text-decoration: none;
+        display              : grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-content      : space-between;
+        column-gap           : 24px;
+        row-gap              : 24px;
     }
 
 

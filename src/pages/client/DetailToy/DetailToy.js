@@ -1,17 +1,43 @@
 import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
 import Header from '~/components/Header/Header';
 import Footer from '~/components/Footer/Footer';
 import Button from '~/components/Button/Button';
 import toy1 from '~/assets/images/toyItems/toy1.png';
+import ToySection from '~/components/ToySection/ToySection';
+import { toast } from 'react-toastify';
+import { connect } from 'react-redux';
+import * as actions from '~/store/actions';
 import './DetailToy.scss';
-function DetailToy() {
-  const location = useLocation();
-  let id = location.state.id;
-  const [toyId, setToyId] = useState('');
-  useEffect(() => setToyId(id), [id]);
 
-  console.log('check toyid', toyId);
+function DetailToy(props) {
+  window.scrollTo(0, 0);
+  const location = useLocation();
+  let id = location && location.state && location.state.id ? location.state.id : '';
+
+  // let id = 5;
+  const [toyId, setToyId] = useState(id);
+  const [listAllToy, setListAllToy] = useState([]);
+  const [number, setNumber] = useState(1);
+  const { allToy, getAllToy, toyById, getToyById, userInfo, tokens, handleAddItemToCart } = props;
+  useEffect(() => setToyId(id), [id]);
+  useEffect(() => {
+    const handleGetAllToy = async () => {
+      return await getAllToy();
+    };
+    handleGetAllToy();
+  }, [getAllToy]);
+  useEffect(() => setListAllToy(allToy), [allToy]);
+  //get toy by id
+  useEffect(() => {
+    const handleGetToyById = async () => {
+      return await getToyById(toyId);
+    };
+    handleGetToyById();
+  }, [getToyById, toyId]);
+
+  let listRelatedProduct = handleBuildRelatedProduct(listAllToy, toyId);
 
   return (
     <div className="detail-toy-container">
@@ -22,21 +48,18 @@ function DetailToy() {
         <div className="detail-toy-main-content">
           <div className="toy-info">
             <div className="left">
-              <p className="toy-name">Teddy Bear</p>
-              <p className="toy-info-content">
-                A successful marketing plan relies heavily on the pulling-power of advertising copy.
-                Writing result-oriented ad copy is difficult, as it must appeal to, entice, and
-                convince consumers to take action. There is no magic formula to write perfect ad
-                copy. It is based on a number of factors.
-              </p>
-              <p className="toy-price">$ 30.00 USD</p>
+              <p className="toy-name">{toyById && toyById.name ? toyById.name : ''}</p>
+              <p className="toy-info-content">{toyById && toyById.toyInfo ? toyById.toyInfo : ''}</p>
+              <p className="toy-price">$ {toyById && toyById.price ? toyById.price : ''} USD</p>
               <div className="toy-buying">
-                <input type="number" defaultValue="1" />
-                <Button name="Add to cart" />
+                <input type="number" value={number} onChange={(e) => setNumber(e.target.value)} />
+                <p onClick={() => handleAddToCart({ toyId, userInfo, number, handleAddItemToCart })}>
+                  <Button name="Add to cart" />
+                </p>
               </div>
             </div>
             <div className="right">
-              <img src={toy1} alt="picture" />
+              <img src={toyById && toyById.image ? toyById.image : ''} alt="picture" />
             </div>
           </div>
           <div className="product-detail">
@@ -55,22 +78,15 @@ function DetailToy() {
                 <div className="product-detail__main">
                   <p className="product-detail__main-text">Add Your Product Description</p>
                   <p className="product-detail__main-content">
-                    The rich text element allows you to create and format headings, paragraphs,
-                    blockquotes, images, and video all in one place instead of having to add and
-                    format them individually. Just double-click and easily create content. A rich
-                    text element can be used with static or dynamic content. For static content,
-                    just drop it into any page and begin editing. For dynamic content, add a rich
-                    text field to any collection and then connect a rich text element to that field
-                    in the settings panel. Voila!
+                    {toyById && toyById.description ? toyById.description : ''}
                   </p>
                 </div>
                 <div className="product-detail__main">
                   <p className="product-detail__main-text">Simple & Elegant Template</p>
                   <p className="product-detail__main-content">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                    unknown printer took a galley of type and scrambled it to make a type specimen
-                    book
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book
                   </p>
                 </div>
               </div>
@@ -78,26 +94,28 @@ function DetailToy() {
                 <div className="table-unit">
                   <div className="unit-content">
                     <p className="unit-title">Width</p>
-                    <p className="unit-value">38 in</p>
+                    <p className="unit-value">{toyById && toyById.width ? toyById.width : ''} in</p>
                   </div>
                   <div className="unit-content">
                     <p className="unit-title">Height</p>
-                    <p className="unit-value">32 in</p>
+                    <p className="unit-value">{toyById && toyById.height ? toyById.height : ''} in</p>
                   </div>
                   <div className="unit-content">
                     <p className="unit-title">Length</p>
-                    <p className="unit-value">21.5 in</p>
+                    <p className="unit-value">{toyById && toyById.length ? toyById.length : ''} in</p>
                   </div>
                   <div className="unit-content">
                     <p className="unit-title">Weight</p>
-                    <p className="unit-value">24 oz</p>
+                    <p className="unit-value">{toyById && toyById.weight ? toyById.weight : ''} oz</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="related-product"></div>
+        <div className="related-product">
+          <ToySection name="Related Products" data={listRelatedProduct} />
+        </div>
         <div className="send-email"></div>
       </div>
       <div className="detail-toy-footer">
@@ -106,5 +124,34 @@ function DetailToy() {
     </div>
   );
 }
-
-export default DetailToy;
+const handleAddToCart = async (state) => {
+  if (state.handleAddItemToCart && state.toyId && state.userInfo && state.userInfo.id && state.number) {
+    let res = await state.handleAddItemToCart({
+      userId: state.userInfo.id,
+      toyId: state.toyId,
+      cartStatusId: 'S1',
+      number: state.number,
+    });
+  }
+};
+const handleBuildRelatedProduct = (data, id) => {
+  let listData = data.filter((item) => item.id !== id);
+  listData = listData.slice(0, 8);
+  return listData;
+};
+function mapStateToProps(state) {
+  return {
+    allToy: state.client.allToy,
+    toyById: state.admin.toyById,
+    userInfo: state.auth.userInfo,
+    tokens: state.auth.tokens,
+  };
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    getAllToy: () => dispatch(actions.fetchAllToy()),
+    getToyById: (id) => dispatch(actions.fetchToyById(id)),
+    handleAddItemToCart: (data) => dispatch(actions.handleAddItemToCart(data)),
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(DetailToy);

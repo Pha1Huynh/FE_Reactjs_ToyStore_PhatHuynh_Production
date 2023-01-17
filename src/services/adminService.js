@@ -17,7 +17,5 @@ const updateToy = (data) => {
 const createANewToy = (data) => {
   return axios.post(`/api/create-a-new-toy`, data);
 };
-const getAllToy = () => {
-  return axios.get(`/api/get-all-toy`);
-};
-export { getAllUsers, getToy, getAllCodesByType, getToyById, updateToy, createANewToy, getAllToy };
+
+export { getAllUsers, getToy, getAllCodesByType, getToyById, updateToy, createANewToy };

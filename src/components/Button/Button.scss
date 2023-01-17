@@ -13,6 +13,8 @@
         &:hover {
             scale: 1.05;
         }
+
+
     }
 
 
@@ -36,4 +38,13 @@
     }
 
 
+}
+
+.button.button-disabled {
+    cursor : not-allowed;
+    opacity: 0.8;
+
+    &:hover {
+        scale: 1;
+    }
 }

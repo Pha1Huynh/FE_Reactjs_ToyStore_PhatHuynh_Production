@@ -1,0 +1,27 @@
+.catalog-container {
+    background-color: #f8f8f8;
+
+    .catalog-header {
+        height          : 75px;
+        position        : fixed;
+        top             : 0;
+        right           : 0;
+        left            : 0;
+        box-shadow      : 1px 1px 15px 0 rgb(0 0 0 / 12%);
+        background-color: #fff;
+        z-index         : 1;
+        background-color: #f8f8f8;
+
+    }
+
+    .catalog-content {
+        width           : 100%;
+        background-color: #f8f8f8;
+        margin-bottom   : 100px;
+        min-height      : 100vh;
+        margin-top      : 30px;
+
+    }
+
+    .catalog-footer {}
+}

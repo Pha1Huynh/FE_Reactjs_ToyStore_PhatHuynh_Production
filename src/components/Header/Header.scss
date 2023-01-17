@@ -13,12 +13,13 @@
         align-items    : center;
 
         .header-logo {
-            font-family : var(--font-varela);
-            color       : #333;
-            font-size   : 2.2rem;
-            font-weight : 550;
-            margin-right: 20px;
-            cursor      : pointer;
+            font-family    : var(--font-varela);
+            color          : #333;
+            font-size      : 2.2rem;
+            font-weight    : 550;
+            margin-right   : 20px;
+            cursor         : pointer;
+            text-decoration: none;
         }
 
         .header-menu {
@@ -61,6 +62,77 @@
 
             .header-icon-cart {
                 margin: 0 12px;
+                color : #000;
+            }
+
+
+        }
+
+        .header-user {
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            margin-right   : 2px;
+
+            .dropdown {
+                position: relative;
+                display : inline-block;
+
+
+                p {
+                    transform: translateY(10px);
+                }
+            }
+
+            .dropdown-content {
+                display         : none;
+                position        : absolute;
+                background-color: #fff;
+                min-width       : 160px;
+                box-shadow      : 0px 8px 16px 0px rgba(0, 0, 0, 0.4);
+                z-index         : 1;
+                margin-top      : 10px;
+                right           : -15px;
+                border-radius   : 4px;
+
+                &::after {
+                    content: "";
+
+                    border-left  : 10px solid transparent;
+                    border-right : 10px solid transparent;
+                    border-bottom: 10px solid #fff;
+                    position     : absolute;
+                    top          : -6px;
+                    right        : 10px;
+                }
+
+                &::before {
+                    content : "";
+                    display : block;
+                    position: absolute;
+                    top     : -14px;
+                    right   : 0;
+                    width   : 65%;
+                    height  : 18px;
+
+                }
+            }
+
+
+            .dropdown-content .dropdown-link {
+                color          : black;
+                padding        : 12px 16px;
+                text-decoration: none;
+                display        : block;
+            }
+
+            .dropdown-content .dropdown-link:hover {
+                background-color: #f1f1f1;
+
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
             }
 
 

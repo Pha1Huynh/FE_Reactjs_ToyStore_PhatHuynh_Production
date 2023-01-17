@@ -3,9 +3,9 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 import rootReducer from './store/reducers/rootReducer';
 import { configureStore } from '@reduxjs/toolkit';
 const persistConfig = {
-  key: 'root',
+  key: 'auth',
   storage,
-  whitelist: [],
+  whitelist: ['auth'],
 };
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 const store = configureStore({ reducer: persistedReducer });

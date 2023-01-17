@@ -36,7 +36,12 @@
             border-radius: 50px;
             font-size    : 1.3rem;
             font-family  : var(--font-open);
-            border       : none
+            border       : none;
+            transition   : ease .5s;
+
+            &:hover {
+                scale: 1.1
+            }
         }
     }
 }

@@ -1,5 +1,5 @@
 import './ToyCategories.scss';
-
+import { Link } from 'react-router-dom';
 function ToyCategories(props) {
   let flexDirection = props.isReverse && 'row-reverse';
   return (
@@ -9,7 +9,10 @@ function ToyCategories(props) {
       </div>
       <div className="content-right">
         <p className="categories-name">{props.categoriesName}</p>
-        <button className="categories-button">Shop now</button>
+        <Link to="/catalog">
+          {' '}
+          <button className="categories-button">Shop now</button>
+        </Link>
       </div>
     </div>
   );
