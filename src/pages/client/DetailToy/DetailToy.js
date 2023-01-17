@@ -40,88 +40,88 @@ function DetailToy(props) {
   let listRelatedProduct = handleBuildRelatedProduct(listAllToy, toyId);
 
   return (
-    <div className="detail-toy-container">
-      <div className="detail-toy-header">
-        <Header />
-      </div>
-      <div className="detail-toy-content">
-        <div className="detail-toy-main-content">
-          <div className="toy-info">
-            <div className="left">
-              <p className="toy-name">{toyById && toyById.name ? toyById.name : ''}</p>
-              <p className="toy-info-content">{toyById && toyById.toyInfo ? toyById.toyInfo : ''}</p>
-              <p className="toy-price">$ {toyById && toyById.price ? toyById.price : ''} USD</p>
-              <div className="toy-buying">
-                <input type="number" value={number} onChange={(e) => setNumber(e.target.value)} />
-                <p onClick={() => handleAddToCart({ toyId, userInfo, number, handleAddItemToCart })}>
-                  <Button name="Add to cart" />
-                </p>
-              </div>
-            </div>
-            <div className="right">
-              <img src={toyById && toyById.image ? toyById.image : ''} alt="picture" />
-            </div>
-          </div>
-          <div className="product-detail">
-            <div className="top">
-              <div className="product-detail-header">
-                <p className="product-detail-text">Product Details</p>
-                <p className="product-code">SKU: 35012</p>
-              </div>
-              <div className="toy-section-strikethrough">
-                <div className="line1"></div>
-                <div className="line2"></div>
-              </div>
-            </div>
-            <div className="bottom">
+    <>
+      <Header />
+      {/* <div className="detail-toy-container">
+        <div className="detail-toy-content">
+          <div className="detail-toy-main-content">
+            <div className="toy-info">
               <div className="left">
-                <div className="product-detail__main">
-                  <p className="product-detail__main-text">Add Your Product Description</p>
-                  <p className="product-detail__main-content">
-                    {toyById && toyById.description ? toyById.description : ''}
-                  </p>
-                </div>
-                <div className="product-detail__main">
-                  <p className="product-detail__main-text">Simple & Elegant Template</p>
-                  <p className="product-detail__main-content">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                    and scrambled it to make a type specimen book
+                <p className="toy-name">{toyById && toyById.name ? toyById.name : ''}</p>
+                <p className="toy-info-content">{toyById && toyById.toyInfo ? toyById.toyInfo : ''}</p>
+                <p className="toy-price">$ {toyById && toyById.price ? toyById.price : ''} USD</p>
+                <div className="toy-buying">
+                  <input type="number" value={number} onChange={(e) => setNumber(e.target.value)} />
+                  <p onClick={() => handleAddToCart({ toyId, userInfo, number, handleAddItemToCart })}>
+                    <Button name="Add to cart" />
                   </p>
                 </div>
               </div>
               <div className="right">
-                <div className="table-unit">
-                  <div className="unit-content">
-                    <p className="unit-title">Width</p>
-                    <p className="unit-value">{toyById && toyById.width ? toyById.width : ''} in</p>
+                <img src={toyById && toyById.image ? toyById.image : ''} alt="picture" />
+              </div>
+            </div>
+            <div className="product-detail">
+              <div className="top">
+                <div className="product-detail-header">
+                  <p className="product-detail-text">Product Details</p>
+                  <p className="product-code">SKU: 35012</p>
+                </div>
+                <div className="toy-section-strikethrough">
+                  <div className="line1"></div>
+                  <div className="line2"></div>
+                </div>
+              </div>
+              <div className="bottom">
+                <div className="left">
+                  <div className="product-detail__main">
+                    <p className="product-detail__main-text">Add Your Product Description</p>
+                    <p className="product-detail__main-content">
+                      {toyById && toyById.description ? toyById.description : ''}
+                    </p>
                   </div>
-                  <div className="unit-content">
-                    <p className="unit-title">Height</p>
-                    <p className="unit-value">{toyById && toyById.height ? toyById.height : ''} in</p>
+                  <div className="product-detail__main">
+                    <p className="product-detail__main-text">Simple & Elegant Template</p>
+                    <p className="product-detail__main-content">
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                      the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                      type and scrambled it to make a type specimen book
+                    </p>
                   </div>
-                  <div className="unit-content">
-                    <p className="unit-title">Length</p>
-                    <p className="unit-value">{toyById && toyById.length ? toyById.length : ''} in</p>
-                  </div>
-                  <div className="unit-content">
-                    <p className="unit-title">Weight</p>
-                    <p className="unit-value">{toyById && toyById.weight ? toyById.weight : ''} oz</p>
+                </div>
+                <div className="right">
+                  <div className="table-unit">
+                    <div className="unit-content">
+                      <p className="unit-title">Width</p>
+                      <p className="unit-value">{toyById && toyById.width ? toyById.width : ''} in</p>
+                    </div>
+                    <div className="unit-content">
+                      <p className="unit-title">Height</p>
+                      <p className="unit-value">{toyById && toyById.height ? toyById.height : ''} in</p>
+                    </div>
+                    <div className="unit-content">
+                      <p className="unit-title">Length</p>
+                      <p className="unit-value">{toyById && toyById.length ? toyById.length : ''} in</p>
+                    </div>
+                    <div className="unit-content">
+                      <p className="unit-title">Weight</p>
+                      <p className="unit-value">{toyById && toyById.weight ? toyById.weight : ''} oz</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <div className="related-product">
+            <ToySection name="Related Products" data={listRelatedProduct} />
+          </div>
+          <div className="send-email"></div>
         </div>
-        <div className="related-product">
-          <ToySection name="Related Products" data={listRelatedProduct} />
+        <div className="detail-toy-footer">
+          <Footer />
         </div>
-        <div className="send-email"></div>
-      </div>
-      <div className="detail-toy-footer">
-        <Footer />
-      </div>
-    </div>
+      </div> */}
+    </>
   );
 }
 const handleAddToCart = async (state) => {

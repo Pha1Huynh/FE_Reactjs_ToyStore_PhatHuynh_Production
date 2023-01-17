@@ -5,16 +5,17 @@ import { Link } from 'react-router-dom';
 import { deleteToken } from '~/utils/token';
 import * as actions from '~/store/actions';
 import './Header.scss';
-import { faShoppingCart, faRightToBracket, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingCart, faRightToBracket, faUser, faBars } from '@fortawesome/free-solid-svg-icons';
 import dayjs from 'dayjs';
 import 'dayjs/locale/vi';
-import memoizeOne from 'memoize-one';
+import './HeaderResponsive.scss';
 dayjs.locale('vi');
 class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
       quantity: ' ',
+      isShowHeaderMenu: false,
     };
   }
   async componentDidMount() {
@@ -50,60 +51,65 @@ class Header extends Component {
   render() {
     let { tokens, userInfo, cartByUserId } = this.props;
 
-    let { quantity } = this.state;
+    let { quantity, isShowHeaderMenu } = this.state;
 
     return (
       <div className="header-container">
-        <div className="content-left">
-          <Link to="/" className="header-logo">
-            ToyStore
-          </Link>
-          <ul className="header-menu">
-            <li className="header-menu-item">Catalog</li>
-            <li className="header-menu-item">Delivery</li>
-            <li className="header-menu-item">About</li>
-            <li className="header-menu-item">Contacts</li>
-          </ul>
-        </div>
-        {tokens && tokens.refreshToken ? (
-          <div className="content-right">
-            <p className="header-user">
-              <div className="dropdown">
-                <p className="">
-                  <FontAwesomeIcon icon={faUser} />
-                </p>
-                <div className="dropdown-content">
-                  {userInfo && userInfo.roleId === 'A' && (
-                    <Link to="/admin" className="dropdown-link">
-                      Admin
-                    </Link>
-                  )}
-                  <p className="dropdown-link">User Account</p>
-                  <p className="dropdown-link" onClick={() => this.handleLogout()}>
-                    Logout
+        <div className="header-content">
+          <p className="header-icon-menu" onClick={() => this.setState({ isShowHeaderMenu: !isShowHeaderMenu })}>
+            <FontAwesomeIcon icon={faBars} />
+          </p>
+          <div className={isShowHeaderMenu ? 'content-left active' : 'content-left'}>
+            <Link to="/" className="header-logo">
+              ToyStore
+            </Link>
+            <ul className="header-menu">
+              <li className="header-menu-item">Catalog</li>
+              <li className="header-menu-item">Delivery</li>
+              <li className="header-menu-item">About</li>
+              <li className="header-menu-item">Contacts</li>
+            </ul>
+          </div>
+          {tokens && tokens.refreshToken ? (
+            <div className="content-right">
+              <p className="header-user">
+                <div className="dropdown">
+                  <p className="">
+                    <FontAwesomeIcon icon={faUser} />
                   </p>
+                  <div className="dropdown-content">
+                    {userInfo && userInfo.roleId === 'A' && (
+                      <Link to="/admin" className="dropdown-link">
+                        Admin
+                      </Link>
+                    )}
+                    <p className="dropdown-link">User Account</p>
+                    <p className="dropdown-link" onClick={() => this.handleLogout()}>
+                      Logout
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </p>
-            <p className="header-cart">
-              <Link to={userInfo && userInfo.id && `/cart-page/${userInfo.id}`} className="header-icon-cart">
-                <FontAwesomeIcon icon={faShoppingCart} size="lg" />
-              </Link>
-            </p>
-            {quantity ? <p className="header-count">{quantity}</p> : ''}
-          </div>
-        ) : (
-          <div className="content-right">
-            <p className="header-cart">
-              Login{' '}
-              <Link to="/login-and-register">
-                <p className="header-icon-cart">
-                  <FontAwesomeIcon icon={faRightToBracket} size="lg" />
-                </p>
-              </Link>
-            </p>
-          </div>
-        )}
+              </p>
+              <p className="header-cart">
+                <Link to={userInfo && userInfo.id && `/cart-page/${userInfo.id}`} className="header-icon-cart">
+                  <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+                </Link>
+              </p>
+              {quantity ? <p className="header-count">{quantity}</p> : ''}
+            </div>
+          ) : (
+            <div className="content-right">
+              <p className="header-cart">
+                Login{' '}
+                <Link to="/login-and-register">
+                  <p className="header-icon-cart">
+                    <FontAwesomeIcon icon={faRightToBracket} size="lg" />
+                  </p>
+                </Link>
+              </p>
+            </div>
+          )}
+        </div>
       </div>
     );
   }

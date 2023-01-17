@@ -1,6 +1,5 @@
 .homepage-main {
 
-
     .homepage-background {
         width   : 100%;
         height  : 100vh;
@@ -25,19 +24,19 @@
         z-index : 1;
 
         .homepage-header {
-            height          : 75px;
-            position        : fixed;
-            top             : 0;
-            right           : 0;
-            left            : 0;
-            box-shadow      : 1px 1px 15px 0 rgb(0 0 0 / 12%);
-            background-color: #fff;
-            z-index         : 1;
-            background-color: #f8f8f8;
+            // height          : 75px;
+            // position        : fixed;
+            // top             : 0;
+            // right           : 0;
+            // left            : 0;
+            // box-shadow      : 1px 1px 15px 0 rgb(0 0 0 / 12%);
+            // background-color: #fff;
+            // z-index         : 1;
+            // background-color: #f8f8f8;
         }
 
         .homepage-poster {
-            width           : 100%;
+            min-width       : 100vw;
             height          : 80vh;
             position        : relative;
             background-color: #f8f8f8;

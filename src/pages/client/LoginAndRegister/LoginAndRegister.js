@@ -13,6 +13,7 @@ import * as actions from '~/store/actions';
 import { Navigate } from 'react-router-dom';
 import { login } from '~/services/clientService';
 import { redirect } from 'react-router-dom';
+import './LARResponsive.scss';
 class LoginAndRegister extends Component {
   constructor(props) {
     super(props);
@@ -71,9 +72,9 @@ class LoginAndRegister extends Component {
     this.setState({
       ...copyState,
     });
+    this.handleValidate(e, type);
   };
   handleLogin = async () => {
-    console.log('login...');
     let data = {};
     let { handleLoginAction, tokens } = this.props;
     data.email = this.state.email;
@@ -154,7 +155,10 @@ class LoginAndRegister extends Component {
                   icon={faAngleLeft}
                   onClick={() => this.handleBack()}
                 />
-                <FontAwesomeIcon icon={faGifts} />
+                <FontAwesomeIcon
+                  icon={faGifts}
+                  className={isOpenLarComponent === true ? `icon-main hidden` : `icon-main`}
+                />
               </div>
               {loginOption === true ? (
                 <div className="lar-header">Login with ToyStore</div>
@@ -197,7 +201,7 @@ class LoginAndRegister extends Component {
                         type="email"
                         placeholder="Enter your email"
                         onChange={(e) => this.handleOnchaneInput(e, 'email')}
-                        onBlur={(e) => this.handleValidate(e, 'email')}
+                        // onKeyDown={(e) => this.handleValidate(e, 'email')}
                       />
                       {emailErrorMessage === true ? (
                         <p className="error-message">Please type the correct email format</p>
@@ -208,7 +212,7 @@ class LoginAndRegister extends Component {
                         value={password}
                         placeholder="Enter your password"
                         onChange={(e) => this.handleOnchaneInput(e, 'password')}
-                        onBlur={(e) => this.handleValidate(e, 'password')}
+                        // onKeyDown={(e) => this.handleValidate(e, 'password')}
                       />
                       {passwordErrorMessage === true ? <p className="error-message">Password min 5 character</p> : null}
                     </div>

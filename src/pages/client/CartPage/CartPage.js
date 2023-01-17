@@ -28,34 +28,34 @@ class CartPage extends Component {
     let { cartEmpty } = this.state;
 
     return (
-      <div className="cart-page-container">
-        <div className="cart-page-header">
-          <Header />
-        </div>
-        <div className="cart-page-content">
-          {cartByUserId.length > 0 ? (
-            <div className="cart-list">
-              {cartByUserId &&
-                cartByUserId.map((item, index) => {
-                  return <CartItem {...item.toyData} number={item.number} key={index} />;
-                })}
+      <>
+        <Header />
+        {/* <div className="cart-page-container">
+          <div className="cart-page-content">
+            {cartByUserId.length > 0 ? (
+              <div className="cart-list">
+                {cartByUserId &&
+                  cartByUserId.map((item, index) => {
+                    return <CartItem {...item.toyData} number={item.number} key={index} />;
+                  })}
 
-              <div className="pay">
-                <p className="price">Total: $ 30.00</p>
-                <button className="btn btn-primary btn-lg">Pay</button>
+                <div className="pay">
+                  <p className="price">Total: $ 30.00</p>
+                  <button className="btn btn-primary btn-lg">Pay</button>
+                </div>
               </div>
-            </div>
-          ) : (
-            <div className="no-cart">
-              <img src={nocart} alt="" />
-              <p className="no-cart-message">Your cart is empty</p>
-            </div>
-          )}
-        </div>
-        <div className="cart-page-footer">
-          <Footer />
-        </div>
-      </div>
+            ) : (
+              <div className="no-cart">
+                <img src={nocart} alt="" />
+                <p className="no-cart-message">Your cart is empty</p>
+              </div>
+            )}
+          </div>
+          <div className="cart-page-footer">
+            <Footer />
+          </div>
+        </div> */}
+      </>
     );
   }
 }

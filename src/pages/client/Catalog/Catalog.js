@@ -55,43 +55,43 @@ class Catalog extends Component {
     let { listAllToy, isAllToy, isStuffedToy, isWoodedToy, listStuffedToy, listWoodedToy } = this.state;
 
     return (
-      <div className="catalog-container">
-        <div className="catalog-header">
-          <Header />
-        </div>
-        <div className="catalog-content">
-          {isAllToy === true && (
-            <ToySection
-              name="All Toy"
-              data={listAllToy}
-              isCatalog={true}
-              callBack={this.setStatus}
-              isAllToy={isAllToy}
-            />
-          )}
-          {isStuffedToy === true && (
-            <ToySection
-              name="Stuffed Animal"
-              data={listStuffedToy}
-              isCatalog={true}
-              callBack={this.setStatus}
-              isStuffedToy={isStuffedToy}
-            />
-          )}
-          {isWoodedToy === true && (
-            <ToySection
-              name="Wooded Toy"
-              data={listWoodedToy}
-              isCatalog={true}
-              callBack={this.setStatus}
-              isWoodedToy={isWoodedToy}
-            />
-          )}
-        </div>
-        <div className="catalog-footer">
-          <Footer />
-        </div>
-      </div>
+      <>
+        <Header />
+        {/* <div className="catalog-container">
+          <div className="catalog-content">
+            {isAllToy === true && (
+              <ToySection
+                name="All Toy"
+                data={listAllToy}
+                isCatalog={true}
+                callBack={this.setStatus}
+                isAllToy={isAllToy}
+              />
+            )}
+            {isStuffedToy === true && (
+              <ToySection
+                name="Stuffed Animal"
+                data={listStuffedToy}
+                isCatalog={true}
+                callBack={this.setStatus}
+                isStuffedToy={isStuffedToy}
+              />
+            )}
+            {isWoodedToy === true && (
+              <ToySection
+                name="Wooded Toy"
+                data={listWoodedToy}
+                isCatalog={true}
+                callBack={this.setStatus}
+                isWoodedToy={isWoodedToy}
+              />
+            )}
+          </div>
+          <div className="catalog-footer">
+            <Footer />
+          </div>
+        </div> */}
+      </>
     );
   }
 }

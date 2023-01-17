@@ -1,0 +1,56 @@
+//Tablet
+@media only screen and (max-width: 46.1875em) {
+    .login-register-container {
+        .lar-content {
+
+
+            .lar-icon {
+
+
+                .icon-back {
+
+
+                    &.hidden {}
+                }
+            }
+
+            .lar-header {}
+
+            .main-content {
+
+
+                .login-social {
+
+
+                    &:hover {}
+
+                    .icon {
+                        margin-right: 20px !important;
+                        color       : red;
+                    }
+
+
+                }
+
+                .login-content {
+
+
+                    input {
+
+
+                        &:active {}
+                    }
+
+                    .error-message {}
+                }
+            }
+
+            .lar-option {
+
+
+                p {}
+            }
+
+        }
+    }
+}
