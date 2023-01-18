@@ -1,7 +1,7 @@
 .toy-section-container {
     width          : 1200px;
     margin         : 0 auto;
-    padding        : 100px 0;
+    padding        : 100px 10px;
     text-decoration: none;
 
     .toy-section-header {
@@ -68,6 +68,7 @@
         justify-content: center;
         align-items    : center;
         margin         : 3.5rem 0;
+
 
         .line1 {
             width           : 10%;

@@ -16,6 +16,7 @@ import link1 from '~/assets/images/listLink/link1.jpg';
 import { faPaperPlane, faPlay } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button/Button';
 import * as actions from '~/store/actions';
+import './HomePageResponsive.scss';
 
 class HomePage extends Component {
   constructor(props) {
@@ -57,8 +58,8 @@ class HomePage extends Component {
     return (
       <>
         <Header />
-        <div className="homepage-main">
-          {/* <div className="homepage-container">
+        <div className="homepage-main" style={{ backgroundImage: `url(${homebg})` }}>
+          <div className="homepage-container">
             <div className="homepage-poster">
               <img src={headerbg} alt="headerbg"></img>
               <div className="poster-notify">
@@ -140,25 +141,32 @@ class HomePage extends Component {
                 </div>
                 <div className="instagram-info-content">
                   <div className="list-link">
-                    <img src={link1} alt="link" />
-                    <img src={link1} alt="link" />
-                    <img src={link1} alt="link" />
-                    <img src={link1} alt="link" />
-                    <img src={link1} alt="link" />
-                    <img src={link1} alt="link" />
+                    <p>
+                      <img src={link1} alt="link" />
+                    </p>
+                    <p>
+                      <img src={link1} alt="link" />
+                    </p>
+                    <p>
+                      <img src={link1} alt="link" />
+                    </p>
+                    <p>
+                      <img src={link1} alt="link" />
+                    </p>
+                    <p>
+                      <img src={link1} alt="link" />
+                    </p>
+                    <p>
+                      <img src={link1} alt="link" />
+                    </p>
                   </div>
                   <Button name="See More Photos" />
                 </div>
               </div>
             </div>
-            <div className="homepage-footer">
-              <Footer />
-            </div>
-          </div> */}
-          {/* <div className="homepage-background">
-            <img src={homebg} alt="bg" />
-          </div> */}
+          </div>
         </div>
+        <Footer />
       </>
     );
   }

@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRightLong } from '@fortawesome/free-solid-svg-icons';
 import ToyItem from '~/components/ToyItem/ToyItem';
 import { Link } from 'react-router-dom';
+import './ToySectionResponsive.scss';
 function ToySection(props) {
   let { data, callBack, isAllToy, isStuffedToy, isWoodedToy } = props;
 

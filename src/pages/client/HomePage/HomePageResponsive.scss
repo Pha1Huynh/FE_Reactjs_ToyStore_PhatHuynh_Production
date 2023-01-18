@@ -1,0 +1,692 @@
+@media only screen and (max-width: 76.875em) {
+    .homepage-main {
+
+
+
+        .homepage-container {
+
+
+            .homepage-poster {
+
+
+                img {}
+
+                .poster-notify {
+                    width : 70%;
+                    height: auto;
+
+                    .notify-title {}
+
+                    .notify-des {
+                        p {
+                            font-size: 2.2rem;
+                        }
+                    }
+
+
+
+                }
+            }
+
+            .homepage-categories {
+                .categories-content {
+                    width: 85%;
+                }
+            }
+        }
+
+        .section-toy {}
+
+        .watch-our-story {
+
+
+            .watch-content {
+
+
+
+                .watch-sub-title {}
+
+                .watch-main-title {}
+
+                .watch-description {}
+
+                .watch-button {
+
+
+                    &:hover {}
+
+                    .play-btn {}
+                }
+            }
+        }
+
+        .made-a-web-flow {
+
+
+
+            .made-web-flow-container {
+                width: 85% !important;
+
+                .made-web-flow-header {
+
+
+                    .made-web-sub-title {}
+
+                    .made-web-main-title1 {
+                        width: 100% !important;
+                    }
+
+
+                }
+
+                .made-web-flow-content {
+                    grid-template-columns: 1fr !important;
+
+                    .content-left {
+                        width          : 85%;
+                        margin         : 0 auto;
+                        display        : flex;
+                        justify-content: center;
+                        align-items    : center;
+                        flex-direction : column;
+                        margin-bottom  : 30px;
+
+                        .made-web-title {}
+
+                        .made-web-strike-through {}
+
+                        .made-web-description {}
+
+
+                    }
+
+                    .content-right {
+                        margin       : 0 auto;
+                        overflow     : hidden;
+                        width        : 85%;
+                        height       : auto;
+                        text-align   : center;
+                        border-radius: 20px;
+
+                        img {
+                            width     : 100% !important;
+                            height    : 100% !important;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+
+        .subscribe-newsletter {
+
+
+            .subscribe-newsletter-container {
+
+                width: 85% !important;
+
+
+                .content-left {
+
+
+                    .send {
+
+
+                        .send-icon {}
+                    }
+
+                    .subscribe-description {
+
+                        text-align: center;
+
+                        .discount {}
+                    }
+                }
+
+                .content-right {
+
+
+                    input {
+
+
+                        &:focus {}
+                    }
+                }
+            }
+        }
+
+        .instagram-info {
+
+
+            .instagram-info-container {
+                width: 85% !important;
+
+                .instagram-info-header {
+
+
+                    .instagram-info-sub-header {}
+
+                    .instagram-info-main-header {}
+                }
+
+                .instagram-info-content {
+
+                    .list-link {
+                        grid-template-columns: 1fr 1fr 1fr !important;
+                        text-align           : center;
+                        gap                  : 30px 20px;
+
+                        img {
+
+
+                            &:hover {}
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+// /_ Mobile and Tablet _/
+@media only screen and (max-width: 63.9375em) {
+    .homepage-main {
+
+
+
+        .homepage-container {
+
+
+            .homepage-poster {
+
+
+                img {}
+
+                .poster-notify {
+
+
+                    .notify-title {}
+
+                    .notify-des {}
+
+
+
+                }
+            }
+
+            .homepage-categories {
+                .categories-content {
+                    grid-template-columns: 1fr;
+                }
+            }
+        }
+
+        .section-toy {}
+
+        .watch-our-story {
+
+
+            .watch-content {
+
+
+                .watch-sub-title {}
+
+                .watch-main-title {}
+
+                .watch-description {}
+
+                .watch-button {
+
+
+                    &:hover {}
+
+                    .play-btn {}
+                }
+            }
+        }
+
+        .made-a-web-flow {
+
+
+
+            .made-web-flow-container {
+
+
+                .made-web-flow-header {
+
+
+                    .made-web-sub-title {}
+
+                    .made-web-main-title1 {}
+
+
+                }
+
+                .made-web-flow-content {
+
+
+                    .content-left {
+                        .made-web-title {}
+
+                        .made-web-strike-through {}
+
+                        .made-web-description {}
+
+
+                    }
+
+                    .content-right {
+                        img {}
+                    }
+                }
+            }
+        }
+
+        .subscribe-newsletter {
+
+
+            .subscribe-newsletter-container {
+                flex-direction: column;
+                padding       : 50px 0;
+
+
+
+                .content-left {
+                    flex-direction: column;
+                    margin-left   : unset !important;
+                    margin-bottom : 30px;
+
+                    .send {
+
+
+                        .send-icon {}
+                    }
+
+                    .subscribe-description {
+
+
+
+                        .discount {
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .content-right {
+
+                    flex-direction: column;
+                    margin-right  : unset !important;
+
+                    input {
+                        width        : 100% !important;
+                        margin-bottom: 20px;
+
+                        &:focus {}
+                    }
+                }
+            }
+        }
+
+        .instagram-info {
+
+
+            .instagram-info-container {
+
+
+                .instagram-info-header {
+
+
+                    .instagram-info-sub-header {}
+
+                    .instagram-info-main-header {}
+                }
+
+                .instagram-info-content {
+
+                    .list-link {
+
+
+                        img {
+
+
+                            &:hover {}
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+// /_ Mobile: width < 740px _/
+@media only screen and (max-width: 46.1875em) {
+    .homepage-main {
+
+
+
+        .homepage-container {
+
+
+            .homepage-poster {
+
+
+                img {}
+
+                .poster-notify {
+                    width : 70%;
+                    height: auto;
+
+                    .notify-title {}
+
+                    .notify-des {
+                        p {
+                            font-size: 2.2rem;
+                        }
+                    }
+
+
+
+                }
+            }
+
+            .homepage-categories {}
+        }
+
+        .section-toy {}
+
+        .watch-our-story {
+
+
+            .watch-content {
+
+
+                .watch-sub-title {}
+
+                .watch-main-title {}
+
+                .watch-description {}
+
+                .watch-button {
+
+
+                    &:hover {}
+
+                    .play-btn {}
+                }
+            }
+        }
+
+        .made-a-web-flow {
+
+
+
+            .made-web-flow-container {
+
+
+                .made-web-flow-header {
+
+
+                    .made-web-sub-title {}
+
+                    .made-web-main-title1 {}
+
+
+                }
+
+                .made-web-flow-content {
+
+
+                    .content-left {
+                        .made-web-title {}
+
+                        .made-web-strike-through {}
+
+                        .made-web-description {}
+
+
+                    }
+
+                    .content-right {
+                        img {}
+                    }
+                }
+            }
+        }
+
+        .subscribe-newsletter {
+
+
+            .subscribe-newsletter-container {
+
+
+
+
+                .content-left {
+
+
+                    .send {
+
+
+                        .send-icon {}
+                    }
+
+                    .subscribe-description {
+                        padding: 0 20px;
+
+
+                        .discount {}
+                    }
+                }
+
+                .content-right {
+
+
+                    input {
+
+
+                        &:focus {}
+                    }
+                }
+            }
+        }
+
+        .instagram-info {
+
+
+            .instagram-info-container {
+
+
+                .instagram-info-header {
+
+
+                    .instagram-info-sub-header {}
+
+                    .instagram-info-main-header {}
+                }
+
+                .instagram-info-content {
+
+                    .list-link {
+
+
+                        img {
+
+
+                            &:hover {}
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+//smallmobile
+@media only screen and (max-width: 37.5em) {
+    .homepage-main {
+
+
+
+        .homepage-container {
+
+
+            .homepage-poster {
+
+
+                img {}
+
+                .poster-notify {
+
+
+                    .notify-title {}
+
+                    .notify-des {
+                        p {}
+                    }
+
+
+
+                }
+            }
+
+            .homepage-categories {}
+        }
+
+        .section-toy {}
+
+        .watch-our-story {
+
+
+            .watch-content {
+
+
+                .watch-sub-title {}
+
+                .watch-main-title {}
+
+                .watch-description {}
+
+                .watch-button {
+
+
+                    &:hover {}
+
+                    .play-btn {}
+                }
+            }
+        }
+
+        .made-a-web-flow {
+
+
+
+            .made-web-flow-container {
+
+
+                .made-web-flow-header {
+
+
+                    .made-web-sub-title {}
+
+                    .made-web-main-title1 {}
+
+
+                }
+
+                .made-web-flow-content {
+
+
+                    .content-left {
+                        .made-web-title {
+                            text-align: center;
+                        }
+
+                        .made-web-strike-through {}
+
+                        .made-web-description {}
+
+
+                    }
+
+                    .content-right {
+                        img {}
+                    }
+                }
+            }
+        }
+
+        .subscribe-newsletter {
+
+
+            .subscribe-newsletter-container {
+
+
+
+
+                .content-left {
+
+
+                    .send {
+
+
+                        .send-icon {}
+                    }
+
+                    .subscribe-description {
+                        padding: 0 20px;
+
+
+                        .discount {}
+                    }
+                }
+
+                .content-right {
+
+
+                    input {
+
+
+                        &:focus {}
+                    }
+                }
+            }
+        }
+
+        .instagram-info {
+
+
+            .instagram-info-container {
+
+
+                .instagram-info-header {
+
+
+                    .instagram-info-sub-header {}
+
+                    .instagram-info-main-header {}
+                }
+
+                .instagram-info-content {
+
+                    .list-link {
+
+
+                        img {
+
+
+                            &:hover {}
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}

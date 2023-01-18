@@ -1,12 +1,12 @@
 .categories-container {
-    width      : 600px;
-    height     : 188px;
-    display    : flex;
-    gap        : 20px;
-    align-items: center;
-    position   : relative;
 
+    height       : 188px;
+    display      : flex;
+    gap          : 20px;
+    align-items  : center;
+    position     : relative;
     border-radius: 20px;
+
 
     .content-left {
         img {
@@ -19,8 +19,9 @@
     }
 
     .content-right {
-        position: absolute;
-        left    : 50%;
+        position   : absolute;
+        left       : 50%;
+        margin-left: 14px;
 
         .categories-name {
             font-size  : 2.8rem;

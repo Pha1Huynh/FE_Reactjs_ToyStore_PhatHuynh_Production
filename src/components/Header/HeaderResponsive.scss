@@ -31,11 +31,12 @@
                 justify-content : flex-end;
                 align-items     : flex-start;
                 width           : 100vmax;
-                bottom          : -359%;
+                bottom          : -400%;
                 background-color: #fff;
                 left            : 0;
                 transform       : translateY(-140%);
                 transition      : ease .3s;
+                padding         : 15px 0;
 
                 &.active {
                     transform: translateY(0);

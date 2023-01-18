@@ -1,45 +1,27 @@
 .homepage-main {
+    overflow: hidden;
 
-    .homepage-background {
-        width   : 100%;
-        height  : 100vh;
-        overflow: hidden;
-        position: fixed;
-        top     : 0;
-        left    : 0;
-        bottom  : 0;
-        right   : 0;
+    background           : center center no-repeat;
+    background-size      : cover;
+    background-attachment: fixed;
+    width                : 100vw;
+    height               : auto;
 
-        img {
-            width     : 100%;
-            height    : 100%;
-            object-fit: cover;
-        }
-    }
+
 
     .homepage-container {
-        width   : 100%;
-        height  : auto;
-        position: absolute;
-        z-index : 1;
-
-        .homepage-header {
-            // height          : 75px;
-            // position        : fixed;
-            // top             : 0;
-            // right           : 0;
-            // left            : 0;
-            // box-shadow      : 1px 1px 15px 0 rgb(0 0 0 / 12%);
-            // background-color: #fff;
-            // z-index         : 1;
-            // background-color: #f8f8f8;
-        }
+        width      : 100%;
+        height     : auto;
+        // position: absolute;
+        z-index    : 1 !important;
 
         .homepage-poster {
-            min-width       : 100vw;
+            width           : 100%;
             height          : 80vh;
+            min-height      : 80vh;
             position        : relative;
             background-color: #f8f8f8;
+            overflow        : hidden;
 
             img {
                 width     : 100%;
@@ -51,6 +33,8 @@
                 position        : absolute;
                 top             : 50%;
                 left            : 50%;
+                // max-width: 40%;
+                min-height      : 308px;
                 width           : 570px;
                 background-color: #fff;
                 border-radius   : 20px;
@@ -89,10 +73,9 @@
                 width : 1200px;
                 margin: 0 auto;
 
-                display        : flex;
-                align-items    : center;
-                justify-content: space-between;
-                gap            : 20px;
+                display              : grid;
+                grid-template-columns: 1fr 1fr;
+                gap                  : 20px;
             }
         }
 
@@ -109,8 +92,8 @@
 
 
             .watch-content {
-                height         : 100%;
-                width          : 1200px;
+                height: 100%;
+
                 margin         : 0 auto;
                 display        : flex;
                 justify-content: center;
@@ -194,8 +177,8 @@
                 }
 
                 .made-web-flow-content {
-                    display        : flex;
-                    justify-content: space-between;
+                    display              : grid;
+                    grid-template-columns: 1fr 1fr;
 
                     margin-top: 100px;
 
@@ -204,6 +187,7 @@
                             margin-top : 80px;
                             font-family: var(--font-varela);
                             font-size  : 3.2rem;
+
                         }
 
                         .made-web-strike-through {
@@ -246,7 +230,7 @@
                 justify-content : space-between;
                 align-items     : center;
                 background-color: #fff;
-                height          : 176px;
+                min-height      : 176px;
                 border-radius   : 20px;
 
                 box-shadow: 0 1px 2px 0 rgb(0 0 0 / 15%);
@@ -259,8 +243,8 @@
                     gap            : 20px;
 
                     .send {
-                        width           : 64px;
-                        height          : 64px;
+                        min-width       : 64px;
+                        min-height      : 64px;
                         background-color: var(--primary);
                         border-radius   : 50%;
                         display         : flex;
@@ -339,22 +323,28 @@
                     padding-bottom: 100px;
 
                     .list-link {
-                        display        : flex;
-                        justify-content: space-between;
-                        align-items    : center;
-                        margin-bottom  : 50px;
+                        display              : grid;
+                        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+                        margin-bottom        : 50px;
+                        gap                  : 20px 14px;
 
-                        img {
-                            width              : 185px;
-                            height             : 185px;
-                            border-radius      : 20px;
-                            transition         : ease;
-                            transition-duration: .3s;
+                        p {
+                            // width : 185px;
+                            // height: 185px;
 
-                            &:hover {
-                                scale: 1.05;
+                            img {
+                                width              : 100%;
+                                height             : 100%;
+                                border-radius      : 20px;
+                                transition         : ease;
+                                transition-duration: .3s;
+
+                                &:hover {
+                                    scale: 1.05;
+                                }
                             }
                         }
+
                     }
                 }
             }

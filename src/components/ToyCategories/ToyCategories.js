@@ -1,5 +1,6 @@
 import './ToyCategories.scss';
 import { Link } from 'react-router-dom';
+import './ToyCategoriesResponsive.scss';
 function ToyCategories(props) {
   let flexDirection = props.isReverse && 'row-reverse';
   return (

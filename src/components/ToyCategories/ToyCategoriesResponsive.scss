@@ -1,0 +1,7 @@
+@media only screen and (max-width: 63.9375em) {
+    .categories-container {
+        &:nth-child(2n) {
+            margin-top: 50px;
+        }
+    }
+}
