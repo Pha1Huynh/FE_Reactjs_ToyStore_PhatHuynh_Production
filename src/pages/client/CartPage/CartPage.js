@@ -5,6 +5,7 @@ import Footer from '~/components/Footer/Footer';
 import './CartPage.scss';
 import CartItem from '~/components/CartItem/CartItem';
 import nocart from '~/assets/images/backgound/nocart.png';
+import './CartPageResponsive.scss';
 import * as actions from '~/store/actions';
 class CartPage extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class CartPage extends Component {
     return (
       <>
         <Header />
-        {/* <div className="cart-page-container">
+        <div className="cart-page-container">
           <div className="cart-page-content">
             {cartByUserId.length > 0 ? (
               <div className="cart-list">
@@ -51,10 +52,8 @@ class CartPage extends Component {
               </div>
             )}
           </div>
-          <div className="cart-page-footer">
-            <Footer />
-          </div>
-        </div> */}
+        </div>
+        <Footer />
       </>
     );
   }

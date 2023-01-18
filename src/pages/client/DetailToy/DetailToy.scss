@@ -2,18 +2,7 @@
     background-color: #f8f8f8;
 
 
-    .detail-toy-header {
-        // height          : 75px;
-        // position        : fixed;
-        // top             : 0;
-        // right           : 0;
-        // left            : 0;
-        // box-shadow      : 1px 1px 15px 0 rgb(0 0 0 / 12%);
-        // background-color: #fff;
-        // z-index         : 1;
-        // background-color: #f8f8f8;
 
-    }
 
     .detail-toy-content {
         width           : 100%;
@@ -28,6 +17,7 @@
             background-color: #fff;
             border-radius   : 20px;
             padding-bottom  : 100px;
+            padding-top     : 70px;
 
 
             .toy-info {
@@ -38,7 +28,7 @@
 
                 .left {
                     width        : 50%;
-                    padding-right: 120px;
+                    padding-right: 70px;
 
                     .toy-name {
                         font-size  : 4rem;
@@ -63,6 +53,11 @@
                         justify-content: flex-start;
                         align-items    : center;
 
+                        p {
+                            width : 100%;
+                            margin: auto 0;
+                        }
+
                         input {
                             width           : 80px;
                             height          : 48px;
@@ -84,10 +79,14 @@
                 .right {
                     width     : 50%;
                     text-align: right;
+                    width     : 441px;
+                    height    : 441px;
+                    overflow  : hidden;
 
                     img {
-                        width : 441px;
-                        height: 441px;
+                        width     : 100%;
+                        height    : 100%;
+                        object-fit: contain;
                     }
                 }
             }

@@ -7,12 +7,16 @@
     margin          : 30px;
     padding         : 30px;
 
-    .cart-item-img {
-        width       : 120px;
-        height      : 120px;
-        object-fit  : cover;
-        width       : 10%;
-        margin-right: 30px;
+    .image {
+        width : 120px;
+        height: 120px;
+
+        .cart-item-img {
+            object-fit  : cover;
+            width       : 100%;
+            height      : 100%;
+            margin-right: 30px;
+        }
     }
 
     .cart-item-info {

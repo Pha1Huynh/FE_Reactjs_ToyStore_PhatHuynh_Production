@@ -33,158 +33,161 @@
                     width: 85%;
                 }
             }
-        }
 
-        .section-toy {}
+            .section-toy {}
 
-        .watch-our-story {
-
-
-            .watch-content {
+            .watch-our-story {
 
 
-
-                .watch-sub-title {}
-
-                .watch-main-title {}
-
-                .watch-description {}
-
-                .watch-button {
+                .watch-content {
 
 
-                    &:hover {}
 
-                    .play-btn {}
+                    .watch-sub-title {}
+
+                    .watch-main-title {}
+
+                    .watch-description {}
+
+                    .watch-button {
+
+
+                        &:hover {}
+
+                        .play-btn {}
+                    }
                 }
             }
-        }
 
-        .made-a-web-flow {
-
+            .made-a-web-flow {
 
 
-            .made-web-flow-container {
-                width: 85% !important;
 
-                .made-web-flow-header {
+                .made-web-flow-container {
+                    width: 85% !important;
+
+                    .made-web-flow-header {
 
 
-                    .made-web-sub-title {}
+                        .made-web-sub-title {}
 
-                    .made-web-main-title1 {
-                        width: 100% !important;
+                        .made-web-main-title1 {
+                            width: 100% !important;
+                        }
+
+
                     }
 
+                    .made-web-flow-content {
+                        grid-template-columns: 1fr !important;
+                        margin-top           : 0 !important;
 
+
+                        .content-left {
+                            width          : 85%;
+                            margin         : 0 auto;
+                            display        : flex;
+                            justify-content: center;
+                            align-items    : center;
+                            flex-direction : column;
+                            margin-bottom  : 30px;
+
+                            .made-web-title {}
+
+                            .made-web-strike-through {}
+
+                            .made-web-description {}
+
+
+                        }
+
+                        .content-right {
+                            margin       : 0 auto;
+                            overflow     : hidden;
+                            width        : 85%;
+                            height       : auto;
+                            text-align   : center;
+                            border-radius: 20px;
+
+                            img {
+                                width     : 100% !important;
+                                height    : 100% !important;
+                                object-fit: cover;
+                            }
+                        }
+                    }
                 }
+            }
 
-                .made-web-flow-content {
-                    grid-template-columns: 1fr !important;
+            .subscribe-newsletter {
+
+
+                .subscribe-newsletter-container {
+
+                    width: 85% !important;
+
 
                     .content-left {
-                        width          : 85%;
-                        margin         : 0 auto;
-                        display        : flex;
-                        justify-content: center;
-                        align-items    : center;
-                        flex-direction : column;
-                        margin-bottom  : 30px;
-
-                        .made-web-title {}
-
-                        .made-web-strike-through {}
-
-                        .made-web-description {}
 
 
+                        .send {
+
+
+                            .send-icon {}
+                        }
+
+                        .subscribe-description {
+
+                            text-align: center;
+
+                            .discount {}
+                        }
                     }
 
                     .content-right {
-                        margin       : 0 auto;
-                        overflow     : hidden;
-                        width        : 85%;
-                        height       : auto;
-                        text-align   : center;
-                        border-radius: 20px;
 
-                        img {
-                            width     : 100% !important;
-                            height    : 100% !important;
-                            object-fit: cover;
+
+                        input {
+
+
+                            &:focus {}
+                        }
+                    }
+                }
+            }
+
+            .instagram-info {
+
+
+                .instagram-info-container {
+                    width: 85% !important;
+
+                    .instagram-info-header {
+
+
+                        .instagram-info-sub-header {}
+
+                        .instagram-info-main-header {}
+                    }
+
+                    .instagram-info-content {
+
+                        .list-link {
+                            grid-template-columns: 1fr 1fr 1fr !important;
+                            text-align           : center;
+                            gap                  : 30px 20px;
+
+                            img {
+
+
+                                &:hover {}
+                            }
                         }
                     }
                 }
             }
         }
 
-        .subscribe-newsletter {
-
-
-            .subscribe-newsletter-container {
-
-                width: 85% !important;
-
-
-                .content-left {
-
-
-                    .send {
-
-
-                        .send-icon {}
-                    }
-
-                    .subscribe-description {
-
-                        text-align: center;
-
-                        .discount {}
-                    }
-                }
-
-                .content-right {
-
-
-                    input {
-
-
-                        &:focus {}
-                    }
-                }
-            }
-        }
-
-        .instagram-info {
-
-
-            .instagram-info-container {
-                width: 85% !important;
-
-                .instagram-info-header {
-
-
-                    .instagram-info-sub-header {}
-
-                    .instagram-info-main-header {}
-                }
-
-                .instagram-info-content {
-
-                    .list-link {
-                        grid-template-columns: 1fr 1fr 1fr !important;
-                        text-align           : center;
-                        gap                  : 30px 20px;
-
-                        img {
-
-
-                            &:hover {}
-                        }
-                    }
-                }
-            }
-        }
 
 
     }

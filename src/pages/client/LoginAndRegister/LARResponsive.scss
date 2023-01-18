@@ -41,7 +41,11 @@
                         &:active {}
                     }
 
-                    .error-message {}
+                    .error-message {
+                        width       : 70% !important;
+                        margin-left : auto;
+                        margin-right: auto;
+                    }
                 }
             }
 

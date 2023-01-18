@@ -1,0 +1,207 @@
+// /_ Special:1200px _/
+@media only screen and (max-width: 75em) {
+    .detail-toy-container {
+
+        .detail-toy-content {
+
+
+            .detail-toy-main-content {
+                width: 85% !important;
+
+                margin: 0 auto;
+
+                .toy-info {
+
+
+                    .left {
+
+
+                        .toy-name {}
+
+                        .toy-info-content {}
+
+                        .toy-price {}
+
+                        .toy-buying {
+
+
+                            input {
+
+
+                                &:active {}
+                            }
+                        }
+                    }
+
+                    .right {
+
+
+                        img {}
+                    }
+                }
+
+                .product-detail {
+
+
+                    .top {
+                        .product-detail-header {
+
+                            .product-code {}
+                        }
+
+                        .toy-section-strikethrough {
+
+
+                            .line1 {}
+
+                            .line2 {}
+                        }
+
+                    }
+
+                    .bottom {
+
+                        .left {
+
+                            .product-detail__main {
+
+                                .product-detail__main-text {}
+
+                                .product-detail__main-content {}
+                            }
+                        }
+
+                        .right {
+
+
+                            .table-unit {
+
+
+                                .unit-content {
+
+                                    .unit-value {}
+                                }
+
+                                .unit-content:last-child {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .detail-toy-footer {}
+    }
+}
+
+
+// /_ Mobile and Tablet _/
+@media only screen and (max-width: 63.9375em) {
+    .detail-toy-container {
+
+        .detail-toy-content {
+
+
+            .detail-toy-main-content {
+
+
+
+                .toy-info {
+                    flex-direction: column-reverse;
+                    width         : 85% !important;
+                    margin        : 0 auto;
+
+                    .left {
+                        margin : 0;
+                        padding: 0;
+                        width  : 100% !important;
+
+                        .toy-name {}
+
+                        .toy-info-content {}
+
+                        .toy-price {}
+
+                        .toy-buying {
+
+
+                            input {
+
+
+                                &:active {}
+                            }
+                        }
+                    }
+
+                    .right {
+                        margin : 0;
+                        padding: 0;
+                        width  : 100% !important;
+
+                        img {}
+                    }
+                }
+
+                .product-detail {
+                    margin: 50px auto 0 auto !important;
+                    width : 85% !important;
+
+
+                    .top {
+                        .product-detail-header {
+
+                            .product-code {}
+                        }
+
+                        .toy-section-strikethrough {
+
+
+                            .line1 {}
+
+                            .line2 {}
+                        }
+
+                    }
+
+                    .bottom {
+                        flex-direction: column;
+
+                        .left {
+                            width        : 100% !important;
+                            padding-right: 0 !important;
+
+                            .product-detail__main {
+
+                                .product-detail__main-text {}
+
+                                .product-detail__main-content {}
+                            }
+                        }
+
+                        .right {
+
+                            width     : 100% !important;
+                            margin-top: 50px;
+
+                            .table-unit {
+
+
+                                .unit-content {
+
+                                    .unit-value {}
+                                }
+
+                                .unit-content:last-child {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .detail-toy-footer {}
+    }
+}
+
+// /_ Mobile: width < 740px _/
+@media only screen and (max-width: 46.1875em) {}

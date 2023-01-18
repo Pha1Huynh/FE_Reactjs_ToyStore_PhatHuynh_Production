@@ -2,6 +2,7 @@ import './CartItem.scss';
 import { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '~/store/actions';
+import './CartItemResponsive.scss';
 function CartItem(props) {
   let number = props.number ? props.number : '';
   let { userInfo, handleAddItemToCart, handleDeleteItemFromCart } = props;
@@ -9,7 +10,9 @@ function CartItem(props) {
   useEffect(() => setQuantity(number), [number]);
   return (
     <div className="cart-item-container">
-      <img className="cart-item-img" src={props.image} alt="" />
+      <p className="image">
+        <img className="cart-item-img" src={props.image} alt="" />
+      </p>
       <div className="cart-item-info">
         <p className="cart-item-name">{props.name}</p>
         <p className="cart-item-price">$ {props.price}.00</p>

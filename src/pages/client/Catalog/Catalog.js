@@ -57,7 +57,7 @@ class Catalog extends Component {
     return (
       <>
         <Header />
-        {/* <div className="catalog-container">
+        <div className="catalog-container">
           <div className="catalog-content">
             {isAllToy === true && (
               <ToySection
@@ -87,10 +87,8 @@ class Catalog extends Component {
               />
             )}
           </div>
-          <div className="catalog-footer">
-            <Footer />
-          </div>
-        </div> */}
+        </div>
+        <Footer />
       </>
     );
   }

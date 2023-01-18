@@ -10,6 +10,7 @@ import { toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import * as actions from '~/store/actions';
 import './DetailToy.scss';
+import './DetailToyResponsive.scss';
 
 function DetailToy(props) {
   window.scrollTo(0, 0);
@@ -42,7 +43,7 @@ function DetailToy(props) {
   return (
     <>
       <Header />
-      {/* <div className="detail-toy-container">
+      <div className="detail-toy-container">
         <div className="detail-toy-content">
           <div className="detail-toy-main-content">
             <div className="toy-info">
@@ -117,10 +118,8 @@ function DetailToy(props) {
           </div>
           <div className="send-email"></div>
         </div>
-        <div className="detail-toy-footer">
-          <Footer />
-        </div>
-      </div> */}
+      </div>
+      <Footer />
     </>
   );
 }
