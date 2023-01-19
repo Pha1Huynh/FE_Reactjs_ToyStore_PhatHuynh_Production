@@ -10,6 +10,7 @@ function HeaderAdmin() {
           <Link to="/admin-user-manage">User-manage</Link>
           <Link to="/admin-allcodes-manage">Allcode-manage</Link>
           <Link to="/admin-toy-manage">Toy-manage</Link>
+          <Link to="/">Home Toy</Link>
         </div>
       </div>
     </div>

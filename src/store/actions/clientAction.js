@@ -1,5 +1,11 @@
 import actionTypes from './actionTypes';
-import { getAllToy, addItemToCart, getCartByUserId, deleteItemFromCart } from '~/services/clientService';
+import {
+  getAllToy,
+  addItemToCart,
+  getCartByUserId,
+  deleteItemFromCart,
+  payItemFromCart,
+} from '~/services/clientService';
 import { toast } from 'react-toastify';
 //get all toy
 export const fetchAllToy = () => {
@@ -97,6 +103,31 @@ export const handleDeleteItemFromCart = (toyId) => {
         type: actionTypes.DELETE_ITEM_FROM_CART_FAILED,
       });
       console.log('some thiong wrong', e);
+      toast.error('Oops, something went wrong');
+    }
+  };
+};
+export const handlePayItemFromCart = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await payItemFromCart();
+      if (res && res.errCode === 0) {
+        dispatch({
+          type: actionTypes.PAY_ITEM_FROM_CART_SUCCESS,
+          data: res.data,
+        });
+        dispatch(fetchCartByUserId());
+        toast.success('Pay success');
+      } else {
+        dispatch({
+          type: actionTypes.PAY_ITEM_FROM_CART_FAILED,
+        });
+        toast.error('Pay failed');
+      }
+    } catch (e) {
+      dispatch({
+        type: actionTypes.PAY_ITEM_FROM_CART_FAILED,
+      });
       toast.error('Oops, something went wrong');
     }
   };

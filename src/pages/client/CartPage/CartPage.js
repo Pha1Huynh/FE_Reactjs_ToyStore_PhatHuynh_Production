@@ -12,21 +12,43 @@ class CartPage extends Component {
     super(props);
     this.state = {
       cartEmpty: false,
-      quantity: 0,
+      price: 0,
     };
   }
   async componentDidMount() {
-    // await this.props.getCartByUserId();
+    await this.props.getCartByUserId();
+    let sumPrice = this.sumPrice();
+    this.setState({
+      price: sumPrice,
+    });
     window.scrollTo(0, 0);
   }
   async componentDidUpdate(prevProps, prevStates) {
     if (prevProps.cartByUserId !== this.props.cartByUserId) {
-      // await this.props.getCartByUserId();
+      if (this.props.cartByUserId !== prevProps.cartByUserId) {
+        let sumPrice = this.sumPrice();
+        this.setState({
+          price: sumPrice,
+        });
+      }
     }
   }
-  render() {
+  sumPrice = () => {
     let { cartByUserId } = this.props;
-    let { cartEmpty } = this.state;
+
+    const sumPrice =
+      cartByUserId &&
+      cartByUserId.length > 0 &&
+      cartByUserId.reduce(
+        (accumulator, currentValue) => accumulator + +currentValue.toyData.price * +currentValue.number,
+        0,
+      );
+
+    return sumPrice;
+  };
+  render() {
+    let { cartByUserId, handlePayItemFromCart } = this.props;
+    let { cartEmpty, price } = this.state;
 
     return (
       <>
@@ -41,8 +63,10 @@ class CartPage extends Component {
                   })}
 
                 <div className="pay">
-                  <p className="price">Total: $ 30.00</p>
-                  <button className="btn btn-primary btn-lg">Pay</button>
+                  <p className="price">Total: $ {price}.00</p>
+                  <button className="btn btn-primary btn-lg" onClick={async () => await handlePayItemFromCart()}>
+                    Pay
+                  </button>
                 </div>
               </div>
             ) : (
@@ -62,6 +86,9 @@ const mapStateToProps = (state) => {
   return { cartByUserId: state.client.cartByUserId };
 };
 const mapDispatchToProps = (dispatch) => {
-  return { getCartByUserId: () => dispatch(actions.fetchCartByUserId()) };
+  return {
+    getCartByUserId: () => dispatch(actions.fetchCartByUserId()),
+    handlePayItemFromCart: () => dispatch(actions.handlePayItemFromCart()),
+  };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(CartPage);

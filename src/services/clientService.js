@@ -24,4 +24,17 @@ const getCartByUserId = () => {
 const deleteItemFromCart = (toyId) => {
   return axios2.delete(`/api/delete-item-from-cart?toyId=${toyId}`);
 };
-export { getAllToy, createNewUser, login, logout, refreshTokenApi, addItemToCart, getCartByUserId, deleteItemFromCart };
+const payItemFromCart = () => {
+  return axios2.patch(`/api/pay-item-from-cart`);
+};
+export {
+  getAllToy,
+  createNewUser,
+  login,
+  logout,
+  refreshTokenApi,
+  addItemToCart,
+  getCartByUserId,
+  deleteItemFromCart,
+  payItemFromCart,
+};

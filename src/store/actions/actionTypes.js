@@ -38,6 +38,10 @@ const actionTypes = Object.freeze({
   //delete item from cart
   DELETE_ITEM_FROM_CART_SUCCESS: 'DELETE_ITEM_FROM_CART_SUCCESS',
   DELETE_ITEM_FROM_CART_FAILED: 'DELETE_ITEM_FROM_CART_FAILED',
+
+  //pay item from cart
+  PAY_ITEM_FROM_CART_SUCCESS: 'PAY_ITEM_FROM_CART_SUCCESS',
+  PAY_ITEM_FROM_CART_FAILED: 'PAY_ITEM_FROM_CART_FAILED',
 });
 
 export default actionTypes;
