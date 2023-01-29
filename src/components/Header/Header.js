@@ -19,7 +19,7 @@ class Header extends Component {
     };
   }
   async componentDidMount() {
-    await this.props.getCartByUserId();
+    await this.props.getCartByUserId('Header');
     let sumQuantity = this.sumQuantity();
     this.setState({
       quantity: sumQuantity,
@@ -120,7 +120,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     handleLogoutAction: (refreshToken) => dispatch(actions.handleLogout(refreshToken)),
-    getCartByUserId: () => dispatch(actions.fetchCartByUserId()),
+    getCartByUserId: (type) => dispatch(actions.fetchCartByUserId(type)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

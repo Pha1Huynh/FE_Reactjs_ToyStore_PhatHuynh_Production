@@ -18,8 +18,8 @@ const refreshTokenApi = (refreshToken) => {
 const addItemToCart = (data) => {
   return axios2.post('/api/add-item-to-cart', data);
 };
-const getCartByUserId = () => {
-  return axios2.get('/api/get-cart-by-user-id');
+const getCartByUserId = (type) => {
+  return axios2.get(`/api/get-cart-by-user-id?type=${type}`);
 };
 const deleteItemFromCart = (toyId) => {
   return axios2.delete(`/api/delete-item-from-cart?toyId=${toyId}`);

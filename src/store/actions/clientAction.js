@@ -22,6 +22,7 @@ export const fetchAllToy = () => {
           type: actionTypes.FETCH_ALL_TOY_FAILED,
         });
       }
+      return res;
     } catch (e) {
       dispatch({
         type: actionTypes.FETCH_ALL_TOY_FAILED,
@@ -60,10 +61,10 @@ export const handleAddItemToCart = (data) => {
   };
 };
 //get cart by user id
-export const fetchCartByUserId = () => {
+export const fetchCartByUserId = (type) => {
   return async (dispatch, getState) => {
     try {
-      let res = await getCartByUserId();
+      let res = await getCartByUserId(type);
       if (res && res.errCode === 0) {
         dispatch({
           type: actionTypes.FETCH_CART_BY_USER_ID_SUCCESS,
@@ -74,6 +75,7 @@ export const fetchCartByUserId = () => {
           type: actionTypes.FETCH_CART_BY_USER_ID_FAILED,
         });
       }
+      return res;
     } catch (e) {
       dispatch({
         type: actionTypes.FETCH_CART_BY_USER_ID_FAILED,

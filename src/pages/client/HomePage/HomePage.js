@@ -17,7 +17,7 @@ import { faPaperPlane, faPlay } from '@fortawesome/free-solid-svg-icons';
 import Button from '~/components/Button/Button';
 import * as actions from '~/store/actions';
 import './HomePageResponsive.scss';
-
+import Loading from '../Loading/Loading';
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -25,10 +25,16 @@ class HomePage extends Component {
       listAllToy: [],
       listStuffedToy: [],
       listWoodedToy: [],
+      loading: true,
     };
   }
   async componentDidMount() {
-    await this.props.getAllToy();
+    let res = await this.props.getAllToy();
+    if (res && res.errCode === 0) {
+      this.setState({
+        loading: false,
+      });
+    }
     window.scrollTo(0, 0);
   }
   componentDidUpdate(prevProps, prevStates) {
@@ -42,6 +48,11 @@ class HomePage extends Component {
         listWoodedToy: listWoodedToy ? listWoodedToy.slice(0, 4) : '',
       });
     }
+    // if (this.props.allToy !== prevProps.allToy && this.props.allToy.length > 0) {
+    //   this.setState({
+    //     loading: false,
+    //   });
+    // }
   }
   buildListToy = (data, type) => {
     if (data && data.length > 0) {
@@ -53,126 +64,142 @@ class HomePage extends Component {
     }
   };
   render() {
-    let { listStuffedToy, listWoodedToy } = this.state;
+    let { loading, listStuffedToy, listWoodedToy } = this.state;
 
     return (
       <>
-        <Header />
-        <div className="homepage-main" style={{ backgroundImage: `url(${homebg})` }}>
-          <div className="homepage-container">
-            <div className="homepage-poster">
-              <img src={headerbg} alt="headerbg"></img>
-              <div className="poster-notify">
-                <p className="notify-title">Say hello to Toystore</p>
-                <div className="notify-des">
-                  <p className="first">Welcom to ToyStore</p>
-                  <p className="second">Manage by PhatHuynh</p>
-                </div>
-                <Button name="Open Catalog" />
-              </div>
-            </div>
-            <div className="homepage-categories">
-              <div className="categories-content">
-                <ToyCategories bgColor="#ffc12c" categoriesName="Stuffed Animals" categoriesImg={cat1} />
-                <ToyCategories bgColor="#fb416b" categoriesName="Wooded Toys" categoriesImg={cat2} isReverse={true} />
-              </div>
-            </div>
-            <div className="section-toy">
-              <ToySection name="Stuffed Animals" data={listStuffedToy} />
-              <ToySection name="Wodded Toys" data={listWoodedToy} />
-            </div>
-            <div className="watch-our-story">
-              <div className="watch-content">
-                <p className="watch-sub-title">About The Shop</p>
-                <p className="watch-main-title">Watch Our Story</p>
-                <p className="watch-description">
-                  There is no magic formula to write perfect ad copy. It is based on a number of factors, including ad
-                  placement, demographic, even the consumer’s mood.
-                </p>
-                <button className="watch-button">
-                  <FontAwesomeIcon icon={faPlay} className="play-btn" />
-                </button>
-              </div>
-            </div>
-            <div className="made-a-web-flow">
-              <div className="made-web-flow-container">
-                <div className="made-web-flow-header">
-                  <p className="made-web-sub-title">Made for Webflow</p>
-                  <p className="made-web-main-title1">Simple & Colorful Ecommerce Template for Your Business</p>
-                </div>
-                <div className="made-web-flow-content">
-                  <div className="content-left">
-                    <p className="made-web-title">Available for FREE!</p>
-                    <div className="made-web-strike-through"></div>
-                    <p className="made-web-description">
-                      A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing
-                      result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to take
-                      action. There is no magic formula to write perfect ad copy
-                    </p>
-                    <Button name="Get it now" />
-                  </div>
-                  <div className="content-right">
-                    <img src={childrenbg} alt="children" />
+        {loading === true ? (
+          <Loading />
+        ) : (
+          <>
+            <Header />
+            <div className="homepage-main" style={{ backgroundImage: `url(${homebg})` }}>
+              <div className="homepage-container">
+                <div className="homepage-poster">
+                  <img src={headerbg} alt="headerbg"></img>
+                  <div className="poster-notify">
+                    <p className="notify-title">Say hello to Toystore</p>
+                    <div className="notify-des">
+                      <p className="first">Welcom to ToyStore</p>
+                      <p className="second">Manage by PhatHuynh</p>
+                    </div>
+                    <Button name="Open Catalog" />
                   </div>
                 </div>
-              </div>
-            </div>
-            <div className="subscribe-newsletter">
-              <div className="subscribe-newsletter-container">
-                <div className="content-left">
-                  <div className="send">
-                    <FontAwesomeIcon className="send-icon" icon={faPaperPlane} />
+                <div className="homepage-categories">
+                  <div className="categories-content">
+                    <ToyCategories bgColor="#ffc12c" categoriesName="Stuffed Animals" categoriesImg={cat1} />
+                    <ToyCategories
+                      bgColor="#fb416b"
+                      categoriesName="Wooded Toys"
+                      categoriesImg={cat2}
+                      isReverse={true}
+                    />
                   </div>
-                  <p className="subscribe-description">
-                    Subscribe to our newsletter & get <p className="discount">10% discount!</p>
-                  </p>
                 </div>
-                <div className="content-right">
-                  <input placeholder="Enter your email address" />
-                  <Button name="Subscribe" size="sm" />
+                <div className="section-toy">
+                  <ToySection name="Stuffed Animals" data={listStuffedToy} />
+                  <ToySection name="Wodded Toys" data={listWoodedToy} />
                 </div>
-              </div>
-            </div>
-            <div className="instagram-info">
-              <div className="instagram-info-container">
-                <div className="instagram-info-header">
-                  <p className="instagram-info-sub-header">@ElasticThemes</p>
-                  <p className="instagram-info-main-header">We're on Instagram!</p>
-                </div>
-                <div className="instagram-info-content">
-                  <div className="list-link">
-                    <p>
-                      <img src={link1} alt="link" />
+                <div className="watch-our-story">
+                  <div className="watch-content">
+                    <p className="watch-sub-title">About The Shop</p>
+                    <p className="watch-main-title">Watch Our Story</p>
+                    <p className="watch-description">
+                      There is no magic formula to write perfect ad copy. It is based on a number of factors, including
+                      ad placement, demographic, even the consumer’s mood.
                     </p>
-                    <p>
-                      <img src={link1} alt="link" />
-                    </p>
-                    <p>
-                      <img src={link1} alt="link" />
-                    </p>
-                    <p>
-                      <img src={link1} alt="link" />
-                    </p>
-                    <p>
-                      <img src={link1} alt="link" />
-                    </p>
-                    <p>
-                      <img src={link1} alt="link" />
-                    </p>
+                    <button className="watch-button">
+                      <FontAwesomeIcon icon={faPlay} className="play-btn" />
+                    </button>
                   </div>
-                  <Button name="See More Photos" />
+                </div>
+                <div className="made-a-web-flow">
+                  <div className="made-web-flow-container">
+                    <div className="made-web-flow-header">
+                      <p className="made-web-sub-title">Made for Webflow</p>
+                      <p className="made-web-main-title1">Simple & Colorful Ecommerce Template for Your Business</p>
+                    </div>
+                    <div className="made-web-flow-content">
+                      <div className="content-left">
+                        <p className="made-web-title">Available for FREE!</p>
+                        <div className="made-web-strike-through"></div>
+                        <p className="made-web-description">
+                          A successful marketing plan relies heavily on the pulling-power of advertising copy. Writing
+                          result-oriented ad copy is difficult, as it must appeal to, entice, and convince consumers to
+                          take action. There is no magic formula to write perfect ad copy
+                        </p>
+                        <Button name="Get it now" />
+                      </div>
+                      <div className="content-right">
+                        <img src={childrenbg} alt="children" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="subscribe-newsletter">
+                  <div className="subscribe-newsletter-container">
+                    <div className="content-left">
+                      <div className="send">
+                        <FontAwesomeIcon className="send-icon" icon={faPaperPlane} />
+                      </div>
+                      <p className="subscribe-description">
+                        Subscribe to our newsletter & get <p className="discount">10% discount!</p>
+                      </p>
+                    </div>
+                    <div className="content-right">
+                      <input placeholder="Enter your email address" />
+                      <Button name="Subscribe" size="sm" />
+                    </div>
+                  </div>
+                </div>
+                <div className="instagram-info">
+                  <div className="instagram-info-container">
+                    <div className="instagram-info-header">
+                      <p className="instagram-info-sub-header">@ElasticThemes</p>
+                      <p className="instagram-info-main-header">We're on Instagram!</p>
+                    </div>
+                    <div className="instagram-info-content">
+                      <div className="list-link">
+                        <p>
+                          <img src={link1} alt="link" />
+                        </p>
+                        <p>
+                          <img src={link1} alt="link" />
+                        </p>
+                        <p>
+                          <img src={link1} alt="link" />
+                        </p>
+                        <p>
+                          <img src={link1} alt="link" />
+                        </p>
+                        <p>
+                          <img src={link1} alt="link" />
+                        </p>
+                        <p>
+                          <img src={link1} alt="link" />
+                        </p>
+                      </div>
+                      <Button name="See More Photos" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <Footer />
+            <Footer />
+          </>
+        )}
       </>
     );
   }
 }
 const mapStateToProps = (state) => {
-  return { allToy: state.client.allToy };
+  return {
+    allToy: state.client.allToy,
+    tokens: state.auth.tokens,
+    userInfo: state.auth.userInfo,
+    cartByUserId: state.client.cartByUserId,
+  };
 };
 const mapDispatchToProps = (dispatch) => {
   return {

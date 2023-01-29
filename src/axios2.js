@@ -11,7 +11,6 @@ dayjs.locale('vi');
 let authTokens = getToken();
 const instance = axios.create({
   baseURL: process.env.REACT_APP_BACKEND_URL,
-  timeout: 1000,
   headers: { Authorization: `Bearer ${authTokens ? authTokens.accessToken : ''}` },
 });
 

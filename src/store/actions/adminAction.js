@@ -1,12 +1,5 @@
 import actionTypes from './actionTypes';
-import {
-  getToy,
-  getAllCodesByType,
-  getToyById,
-  updateToy,
-  createANewToy,
-  getAllToy,
-} from '~/services/adminService';
+import { getToy, getAllCodesByType, getToyById, updateToy, createANewToy, getAllToy } from '~/services/adminService';
 import { toast } from 'react-toastify';
 //get short toy
 export const fetchDataShortToy = () => {
@@ -64,6 +57,7 @@ export const fetchToyById = (id) => async (dispatch) => {
         type: actionTypes.FETCH_TOY_BY_ID_FAILED,
       });
     }
+    return res;
   } catch (e) {
     dispatch({
       type: actionTypes.FETCH_TOY_BY_ID_FAILED,

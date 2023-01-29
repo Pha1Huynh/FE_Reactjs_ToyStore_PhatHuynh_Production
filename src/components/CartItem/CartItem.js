@@ -11,7 +11,7 @@ function CartItem(props) {
   return (
     <div className="cart-item-container">
       <p className="image">
-        <img className="cart-item-img" src={props.image} alt="" />
+        <img className="cart-item-img" src={props.image} alt="img" />
       </p>
       <div className="cart-item-info">
         <p className="cart-item-name">{props.name}</p>
@@ -23,7 +23,6 @@ function CartItem(props) {
       <div className="cart-item-quantity">
         <input
           type="number"
-          defaultValue="1"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           onBlur={() =>
