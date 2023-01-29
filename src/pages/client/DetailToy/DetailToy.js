@@ -23,6 +23,7 @@ function DetailToy(props) {
   const [listAllToy, setListAllToy] = useState([]);
   const [number, setNumber] = useState(1);
   const { allToy, getAllToy, toyById, getToyById, userInfo, tokens, handleAddItemToCart } = props;
+
   useEffect(() => setToyId(id), [id]);
   useEffect(() => {
     const handleGetAllToy = async () => {
@@ -63,7 +64,7 @@ function DetailToy(props) {
                     <p className="toy-price">$ {toyById && toyById.price ? toyById.price : ''} USD</p>
                     <div className="toy-buying">
                       <input type="number" value={number} onChange={(e) => setNumber(e.target.value)} />
-                      <p onClick={() => handleAddToCart({ toyId, userInfo, number, handleAddItemToCart })}>
+                      <p onClick={() => handleAddToCart({ toyId, userInfo, number, handleAddItemToCart }, tokens)}>
                         <Button name="Add to cart" />
                       </p>
                     </div>
@@ -135,14 +136,19 @@ function DetailToy(props) {
     </p>
   );
 }
-const handleAddToCart = async (state) => {
-  if (state.handleAddItemToCart && state.toyId && state.userInfo && state.userInfo.id && state.number) {
-    let res = await state.handleAddItemToCart({
-      userId: state.userInfo.id,
-      toyId: state.toyId,
-      cartStatusId: 'S1',
-      number: state.number,
-    });
+const handleAddToCart = async (state, tokens) => {
+  if (tokens && tokens.accessToken && tokens.refreshToken) {
+    if (state.handleAddItemToCart && state.toyId && state.userInfo && state.userInfo.id && state.number) {
+      let res = await state.handleAddItemToCart({
+        userId: state.userInfo.id,
+        toyId: state.toyId,
+        cartStatusId: 'S1',
+        number: state.number,
+      });
+    }
+  }
+  if (!tokens) {
+    toast.warning('Please login first');
   }
 };
 const handleBuildRelatedProduct = (data, id) => {

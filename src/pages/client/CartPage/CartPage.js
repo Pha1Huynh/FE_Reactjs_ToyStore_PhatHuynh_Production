@@ -54,7 +54,7 @@ class CartPage extends Component {
   render() {
     let { cartByUserId, handlePayItemFromCart, tokens } = this.props;
     let { price, loading } = this.state;
-    if (tokens && tokens.accessToken && tokens.refreshToken) {
+    if (!tokens || !tokens.accessToken || !tokens.refreshToken) {
       return <Navigate replace to="/" />;
     } else {
       return (
